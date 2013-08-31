@@ -1,0 +1,11 @@
+Definition:(Tenen Baum): A stack is a ordered collection of items into which new items can be 
+                         inserted and and deleted from one end called the "Top" of the stack.
+                         also known as Last In First Out data Structure(LIFO) means the item
+                         which is inserted at the end can be get first.
+            two operations performed on the stack.
+           1.PUSH(x) 2.POP()
+Applications:
+   1.used in expression evaluation(reverse polish notation)
+   2.In Parsing Phase of Compilation.
+   3.Recursion technique is implemented by the Stack.
+   

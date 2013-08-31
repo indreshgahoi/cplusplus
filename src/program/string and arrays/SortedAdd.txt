@@ -1,0 +1,35 @@
+//sorted array is given find two nodes in an array which add to k??
+// O(n) complexity needed 
+// here we start with two pointers 
+// one from start of array index and one from the last 
+// so just find that accoprdingly
+//code:
+void SortedAdd(int arr[],int n,int &a,int &b)
+{
+int *p=arr;
+int *q=arr+n-1;
+int i=0;
+int j=n-1;
+while(i<=j)
+{
+if(*(p+i)+*(q+j)==k)
+{
+*a=i;
+*b=j;
+break;
+}
+else if(*(p+i)+*(q+j)<k)
+{
+i=i+1;
+}
+else
+j=j+1;
+}
+return;
+}
+
+// like this question one question is asked from interviewr that
+// in BST find two nodes which add up to the key.
+// very smart question to do in o(n) complexity and and o(1) auxilary space
+//just convert bst to sorted DLL
+// and again use this concept to find two nodes  

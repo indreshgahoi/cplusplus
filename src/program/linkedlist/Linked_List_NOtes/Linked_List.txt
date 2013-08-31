@@ -1,0 +1,11 @@
+Definition:(Tenen Baum):A linked List is a Dynamic data Structure.Each item in a linked list called
+                        Node and  contains two fields -- 1.Information 2.next address.
+                        The Entire Linked List is accessed by a external pointer that points to the first
+                        node of Linked List,by external mean that one that is not includeed in the node.
+                        The last node of linear Linked List point to the NULL.
+
+kinds:1.Linear Linked List.
+      2.Doubly Linked List.
+      3.Circular Linked List.
+Application : used to implements stacks , queues,Binary tree, Adjacancy list to represent graphs.
+        

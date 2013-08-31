@@ -1,0 +1,27 @@
+Definition:(Tenen Baum)
+ An array is a finite ordered set of homogeneous elements,by finite means that
+ the array has specific number of elements.,by homogeneous  means that the
+ elements of an array are always have the same data type means there can be
+ character array seperate and integer 
+array as seperate but both combindely not possible in the arrays.
+
+In mathematical form they can be viewed as a matrix.
+
+Kinds :1.one dimensional arrays.2.multi dimensional arrays.
+
+Merits :1.we can directly access any elment 
+ if we want 4th elemnt in array so just needed a[3].O(1) random access.
+        
+      
+Demerits :It is very costly to dlete any element from the array because shifting takes  place
+          so the O(n) complexity of deletio
+
+Application:Used to implements other data structures like:
+            1. Binary heap
+            2.Stack
+            3.Queue
+            4. HashTable.
+            5.Dequee     
+                     
+    
+          

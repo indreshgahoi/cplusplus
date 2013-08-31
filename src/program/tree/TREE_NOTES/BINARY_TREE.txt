@@ -1,0 +1,11 @@
+
+DEFINITION :(TENEN BAUM):A binary Tree is a finite set of elements taht is either empty or is partitioned 
+            into three disjoints subsets. The first subset contains a single element called the root of the
+            tree. The other two subsets are themselves binary trees called the left and right subtrees of the
+            original tree. A left or right subtree can be empty.Each element of a binary tree called a node
+            of the tree
+
+Kinds:1.Binary Search tree (Having seach prperty)
+      
+Applications: where the 2 way decisions are involved.
+                              

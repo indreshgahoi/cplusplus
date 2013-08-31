@@ -1,0 +1,6 @@
+The Ford-Fulkerson Method depends on
+ 1->Residual networks
+ 2->Augmenting Path
+ 3->Cuts
+ 
+ 

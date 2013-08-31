@@ -1,0 +1,12 @@
+
+DEFINITION:A queue is an ordered collection of items from which items may be deleted at one end
+           (called the "front") and inserted at other end (called the "rear") of the queue.
+           also known as the First In First OUT (fifo) 
+           Two operations can be performed on queues:
+           1. ENQUEE 2.DEQUEE
+Types :1.Priority queue.
+       2.Double Ended Queue.
+       3. Circular queue.
+
+Application :1. priority queue is used in fifo Scheduling algorithms.
+             2. queues are used in many graphs algorithms like BFS(breadth First Search)

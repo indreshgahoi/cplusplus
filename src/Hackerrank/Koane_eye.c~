@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+void swap(char* a,char *b)
+{
+  char temp=*a;
+  *a=*b;
+  *b=temp;
+}
+void strrev(const char* str)
+{
+  int len=strlen(str);
+  int i=0;
+  while(i<len)
+  {
+    swap((char *)(str+i),(char *)(str+len-1));
+    i++;len--;
+  }
+}
+
+int main() {
+
+    int i=0;
+    char arr[100][1000];
+    char str[100];
+    while(scanf("%s",str)!=EOF)
+    {
+        strrev(str);
+        strcpy(arr[i],str);
+        i++;
+    }
+    i--;
+    while(i>=0)
+    {  
+        puts(arr[i]);
+        i--;
+    }
+    
+    return 0;
+}

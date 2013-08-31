@@ -1,0 +1,28 @@
+Node* reverselink(Node* head, int group)
+{ 
+        Node *r = NULL; 
+        Node *q; 
+
+        while(head)
+        { 
+             int count = group;
+             Node *next, *pr = NULL; 
+             Node *p = head;
+
+             while(head && count--)
+             {   
+                    next = head->next;     
+                    head->next = pr;  
+                    pr = head;     
+                    head =next;     
+             }           
+
+             if(!r) {     
+                    r = pr;}
+             else  {
+                    q->next = pr;}
+  
+             q = p;       
+         }       
+         return r; 
+}
