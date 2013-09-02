@@ -6,7 +6,11 @@
  */
 
 /*
- * Name
+ * 
+ Link for understanding
+ http://wordaligned.org/articles/next-permutation
+ 
+ Name
 Iterating Over All Permutations of an Array
 
 Problem
