@@ -2,7 +2,7 @@
  * TrapWater.cpp
  *
  *  Created on: Apr 9, 2013
- *      Author: root
+ *      Author: Indresh Gahoi
  */
 
 #include "constant.h"
