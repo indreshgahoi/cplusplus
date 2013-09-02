@@ -5,7 +5,7 @@ struct point
     double y;
 };
 
-
+https://webdocs.cs.ualberta.ca/~contest/code/
 /* It should return angle between [0,2*pi)
  * if Point is (0,0) return 
  *
