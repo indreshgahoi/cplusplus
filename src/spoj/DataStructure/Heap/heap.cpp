@@ -14,19 +14,15 @@ using namespace std;
 typedef int Integer;
 
 
-struct heap_node
-{
- Integer priority;
- heap_node(Integer priority):priority(priority)
- {
- }
+struct heap_node {
+	Integer priority;
+	heap_node(Integer priority):priority(priority){
+	}
 
-ostream& operator<<(ostream& out,heap_node &node)
-{
-	out<< "[ priority=" << priority<<"]"<<endl;
-	return out;
-}
-
+	ostream& operator<<(ostream& out,heap_node &node){
+		out<< "[ priority=" << priority<<"]"<<endl;
+		return out;
+	}
 };
 
 
