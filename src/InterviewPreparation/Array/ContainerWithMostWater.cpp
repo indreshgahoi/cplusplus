@@ -2,7 +2,7 @@
  * ContainerWithMostWater.cpp
  *
  *  Created on: Apr 9, 2013
- *      Author: root
+ *      Author: Indresh Gahoi
  */
 
 /* Given n non-negative integers a1, a2, ..., an, where each represents
