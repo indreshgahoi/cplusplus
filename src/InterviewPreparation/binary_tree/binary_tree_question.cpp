@@ -103,10 +103,14 @@ using  namespace std;
 
  bool hasPathSum(TreeNode *root, int sum);
  vector<vector<int> > pathSumii(TreeNode *root, int sum);
- void printPaths(TreeNode* root);
+ void printPaths(TreeNode* root);// root_leaf_path
 
  int maxPathSum(TreeNode *root);
  bool isSumProperty(TreeNode* root);
+
+// Done By PostOrder
+void deleteTree(TreeNode* root);
+TreeNode *lca(TreeNode *, TreeNode *);
 
 
 
@@ -981,7 +985,7 @@ bool isSame(TreeNode *r1,TreeNode*r2){
 }
 
  /*
-  *   Same tree leetcode
+  *   Same tree leetcode two trees are identical or not
   */
 
  bool isSameTree(TreeNode *p, TreeNode *q) {
@@ -1167,8 +1171,24 @@ bool isSumProperty(TreeNode* root)
 
 
 
+/*
+ * Question: If you are given two traversal sequences, can you construct the binary tree?
+ * Answer:-It depends on what traversals are given. If one of the traversal methods is Inorder
+ * then the tree can be constructed, otherwise not.
+ *
+ */
+/*
+ * Therefore, following combination can uniquely identify a tree.
 
+ 	 Inorder and Preorder.
+	 Inorder and Postorder.
+	 Inorder and Level-order.
 
+ And following do not.
+	Postorder and Preorder.
+	Preorder and Level-order.
+	Postorder and Level-order.
+ */
 
 
 /*
@@ -1419,6 +1439,22 @@ void doubleTree(TreeNode* tree){
 		tree->left->left=oldLeft;
 	}
 
+}
+/* Question:
+ * To delete a tree we must traverse all the nodes of the tree and delete them one by one.
+ *  So which traversal we should use – Inorder or Preorder or Postorder.
+ *  Answer is simple – Postorder, because before deleting the parent node we should
+ *  delete its children nodes first
+ * We can delete tree with other traversals also with extra space complexity but why
+ * should we go for other traversals if we have Postorder available which does the work
+ *  without storing anything in same time complexity
+ */
+void deleteTree(TreeNode *root){
+	if(!root)
+		return;
+	deleteTree(root->left);
+	deleteTree(root->right);
+	delete root;
 }
 
 /*

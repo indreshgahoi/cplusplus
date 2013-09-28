@@ -7,17 +7,18 @@
 
 
 #include<stdio.h>
+#include<math.h>
 #define EPS 1e-6
-struct Point
+struct point
 {
 	double x;
 	double y;
 };
 
-typedef struct Point Point;
+typedef struct point Point ;
 
 
-double polarAngle(const point &p)
+double polarAngle (const  Point p)
 {
     if(fabs(p.x)<=EPS && fabs(p.y)<=EPS) return -1.0;
     if(fabs(p.x)<=EPS) return (p.y>EPS? 1.0:3.0) *acos(0);
@@ -33,10 +34,11 @@ double polarAngle(const point &p)
 * return 2 clock wise
 * return 0 colinear
 */
-int ccw(const point &p,const point &q,const point &r)
+
+int ccw(const Point p,const Point q,const Point r)
 {
-    point a={p.x-r.x,p.y-r.y};
-    point b={q.x-r.x,q.y-r.y};
+	Point a={p.x-r.x,p.y-r.y};
+	Point b={q.x-r.x,q.y-r.y};
     // a=ax i+ ay j
     // b=bx i + by j
     // a*b= ax*by - ay*bx cross product

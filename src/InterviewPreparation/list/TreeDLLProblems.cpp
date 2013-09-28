@@ -107,10 +107,10 @@ void BuildTestTree(){
 	insertToTree(&tree,3);
 	insertToTree(&tree,5);
 	insertToTree(&tree,1);
-        insertToTree(&tree,9);
-        insertToTree(&tree,10);
-        insertToTree(&tree,6);
-        insertToTree(&tree,7);
+    insertToTree(&tree,9);
+    insertToTree(&tree,10);
+    insertToTree(&tree,6);
+    insertToTree(&tree,7);
 }
 
 void treeToListTest(){

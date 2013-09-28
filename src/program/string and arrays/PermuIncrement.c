@@ -14,64 +14,64 @@
 
 void insertionsort(char *s,int n,int st)
 {
-int i,j;
-int key;
-i=st+1;
-for(i=st+1;i<=st+n-1;i++)
-{
-key=s[i];
-for(j=i-1;j>=st &&s[j]>=s[i];j--)
-s[j+1]=s[j];
-s[j+1]=key;
-}
+	int i,j;
+	int key;
+	i=st+1;
+	for(i=st+1;i<=st+n-1;i++)
+	{
+		key=s[i];
+		for(j=i-1;j>=st &&s[j]>=s[i];j--)
+			s[j+1]=s[j];
+		s[j+1]=key;
+	}
 }
 
 void ImmediateGreater(int num)
 {
-static char s[100];
-int i,j;
-int c;
-char temp;
-sprintf(s,"%d",num);
-c=0;
-while(num)
-{
-num=num/10;
-c++;
-}
-s[c]='\0';
-for(i=c-2;i>=0 && s[i]>=s[i+1];i--);
-printf("%d\n",i);
-puts(s);
-if(i<0)
-{
-printf("this is itself the greatest number");
-return;
-}
-else
-{
-insertionsort(s+i+1,c-i-1,0);
+	static char s[100];
+	int i,j;
+	int c;
+	char temp;
+	sprintf(s,"%d",num);
+	c=0;
+	while(num)
+	{
+		num=num/10;
+		c++;
+	}
+	s[c]='\0';
+	for(i=c-2;i>=0 && s[i]>=s[i+1];i--);
+	printf("%d\n",i);
+	puts(s);
+	if(i<0)
+	{
+		printf("this is itself the greatest number");
+		return;
+	}
+	else
+	{
+		insertionsort(s+i+1,c-i-1,0);
 
-for(j=i+1;j<=c-1;j++)
-{
-if(s[i]<s[j])
-break;
-}
-temp=s[j];
-s[j]=s[i];
-s[i]=temp;
-num=atoi(s);
-fprintf(stdout,"%d",num);
-}
-return;
+		for(j=i+1;j<=c-1;j++)
+		{
+			if(s[i]<s[j])
+				break;
+		}
+		temp=s[j];
+		s[j]=s[i];
+		s[i]=temp;
+		num=atoi(s);
+		fprintf(stdout,"%d",num);
+	}
+	return;
 }
 
 int main(void)
 {
-int num;
-scanf("%d",&num);
+	int num;
+	scanf("%d",&num);
 
-ImmediateGreater(num);
-return 0;
+	ImmediateGreater(num);
+	return 0;
 
 }

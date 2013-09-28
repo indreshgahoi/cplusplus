@@ -7,16 +7,16 @@
 // just means the stack is full :)
 struct stack
 {
-int Arr[100];
-int top1;
-int top2;
+	int Arr[100];
+	int top1;
+	int top2;
 }s;
 
 int isFull(struct stack s)
 {
-if(s.top1==s.top2)
-return 1;
-return 0;
+	if(s.top1==s.top2)
+		return 1;
+	return 0;
 }
 
 

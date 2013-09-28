@@ -1,3 +1,5 @@
+#include "tree.h"
+
 struct node * inOrderSuccessor(struct node *root, struct node *n)
 {
     if( n->right != NULL )
@@ -5,12 +7,12 @@ struct node * inOrderSuccessor(struct node *root, struct node *n)
     struct node *succ=NULL;
     while(root)
     {
-        if(n->data < root->data)
+        if(n->info < root->info)
         {
             succ=root;
             root=root->left;
         }
-        else if(n->data > root->data)
+        else if(n->info > root->info)
             root=root->right;
         else
            break;

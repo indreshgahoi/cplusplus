@@ -1,11 +1,9 @@
 
 # include<stdio.h>
 # include<stdio.h>
-# include<process.h>
 # include<stdlib.h>
 # include<ctype.h>
-# include<conio.h>
-# include<mem.h>
+
 
 unsigned char  Data[100001];
 unsigned char keystream[1001];

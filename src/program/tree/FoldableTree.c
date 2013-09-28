@@ -6,26 +6,26 @@
 
 struct node
 {
- int data;
- struct	node *left;
- struct node *right;
+	int data;
+	struct	node *left;
+	struct node *right;
 };
 
 int isFoldable(struct node *r,struct node *l)
 {
-  if((!r && l)||(r && !l))
-   return 0;
-  else if(!r && !l)
-   return 1;
-   else
-   return(isFoldable(r->left,l->right) && isFoldable(r->right,l->left));
+	if((!r && l)||(r && !l))
+		return 0;
+	else if(!r && !l)
+		return 1;
+	else
+		return(isFoldable(r->left,l->right) && isFoldable(r->right,l->left));
 }
 
 int testFoldable(struct node *root)
 {
-if(!root)
-return 1;
+	if(!root)
+		return 1;
 
-return(isFoldable(root->left,root->right));
+	return(isFoldable(root->left,root->right));
 }
 

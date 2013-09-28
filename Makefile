@@ -2,7 +2,8 @@ CXXFLAGS =	-O2 -g -Wall -fmessage-length=0
 
 
 
-OBJS= Kth_Parent.o
+OBJS= mycat.o
+
 
 LIBS =
 
@@ -11,7 +12,7 @@ BUILD_DIR=/usr/build/
 OBJS_FILE=$(foreach d,$(OBJS),$(BUILD_DIR)$d)
 
 #TARGET =	ProgrammingStuff1
-TARGET =	Main
+TARGET =	mycat
 
 
 
@@ -61,6 +62,7 @@ FILE_PATH=$(CURRENT_DIR)$(FILE_NAME)
 
 HAKERRANK_PATH=src/Hackerrank/
 
+FILEIO_PATH=src/fileIO/
 	
 
 
@@ -78,6 +80,10 @@ stringTokenizer.o:$(STRINGS_FILE)
 
 Kth_Parent.o:
 	gcc -c -g $(HAKERRANK_PATH)Kth_Parent.cpp -o $(BUILD_DIR)Kth_Parent.o
+	
+mycat.o:
+	gcc -c -g $(FILEIO_PATH)mycat.c -o $(BUILD_DIR)mycat.o
+	
 clean:
 	rm -f $(OBJS_FILE) $(BUILD_DIR)$(TARGET) 
 

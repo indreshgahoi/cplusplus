@@ -1,17 +1,21 @@
 #include<stdio.h>
 #define INT_MAX 32767
+
 struct node {
    int key;
     struct node* left; 
     struct node* right;
 };
+
 typedef struct node* NODEPTR;
+
 NODEPTR getnode(void){
    NODEPTR p;
    p=(NODEPTR)malloc(sizeof(struct node));
    return(p); 
 
 }/*end of getnode*/
+
 NODEPTR maketree(int key){
         NODEPTR p;
         p=getnode();
@@ -20,59 +24,59 @@ NODEPTR maketree(int key){
         p->right=NULL; 
     return(p);
 }/*enf of maketree*/
+
 void printline(int a){
-int j=25;
-while(j--)
-printf("%c",a);
-printf("\n");
+	int j=25;
+	while(j--)
+		printf("%c",a);
+		printf("\n");
 }
 
 
 void setleft(NODEPTR p,int key){
 
-if(p==NULL)
-     printf("void insertion");
-else if(p->left != NULL)
-     printf("invalid insertion");
-else
-  p->left=maketree(key);
+	if(p==NULL)
+		printf("void insertion");
+	else if(p->left != NULL)
+		printf("invalid insertion");
+	else
+		p->left=maketree(key);
 }
 void setright(NODEPTR p,int key){
 
-if(p==NULL)
-     printf("void insertion");
-else if(p->right != NULL)
-     printf("invalid insertion");
-else
-  p->right=maketree(key);
+	if(p==NULL)
+		printf("void insertion");
+	else if(p->right != NULL)
+		printf("invalid insertion");
+	else
+		p->right=maketree(key);
 }
 void insert(NODEPTR *tree){
 
-NODEPTR p,q;
-int key;
+	NODEPTR p,q;
+	int key;
 
-
-    printf("\nEnter the keys");
-  scanf("%d",&key);   
-while(key != EOF){
-   p=NULL;q=*tree;
-    while(q!=NULL){
-      p=q;
-         
+	 printf("\nEnter the keys");
+    scanf("%d",&key);
+ while(key != EOF){
+    p=NULL;q=*tree;
+     while(q!=NULL){
+       p=q;
       if(key<=p->key)
         q=p->left;
       else
         q=p->right; 
-    }/*End of inner while*/
+     }/*End of inner while*/
 
-if(p==NULL){
-   *tree=maketree(key);
-}else if(key<=p->key){
-      setleft(p,key);
-      }else setright(p,key);
-scanf("%d",&key);
+     if(p==NULL){
+    	 *tree=maketree(key);
+     }else if(key<=p->key){
+    	 setleft(p,key);
+     }
+     else setright(p,key);
+     scanf("%d",&key);
 
-}/*end of outer while*/
+ }/*end of outer while*/
 
 }/*end of insert function*/
 
@@ -113,44 +117,43 @@ void traversal(NODEPTR p){
          case 3:
                 intrav(p);break;  
          case 4:
-               return; break;
+               break;
          default:
                  printf("Hi i m default");
+                 break;
 
-       
       }/*end of switch*/
-          
-     
-         
-   }
+  }
 
 }/*end of traversal*/ 
 
 int kthMin(NODEPTR T,int *k){
-int x;
-if(T!=NULL){
-x=kthMin(T->left ,k);
-if((*k)!=0){
-(*k)--;
-if(*k==0)
-return(T->key);
+	int x;
+	if(T){
+		x=kthMin(T->left ,k);
+		if((*k)!=0){
+			(*k)--;
+			if(*k==0)
+				return(T->key);
 
-return(kthMin(T->right,k));}
-}
+			return(kthMin(T->right,k));
+		}
+	}
 return x;
 }
+
 main()
 {
- NODEPTR *tree;
- int ch;int j=0;
- //int number; 
-*tree=NULL;
-  while(1){
-   printline('*');
-   printf("Enter the choice:-"); 
-   printf("\n1.Insert the element\n2.Delete the element\n3.Traversal\n4.call function\n");
-   scanf("%d",&ch);
-   printline('=');
+	NODEPTR *tree;
+	int ch;int j=0;
+	//int number;
+	*tree=NULL;
+	while(1){
+		printline('*');
+		printf("Enter the choice:-");
+		printf("\n1.Insert the element\n2.Delete the element\n3.Traversal\n4.call function\n");
+		scanf("%d",&ch);
+		printline('=');
 
       switch(ch){
          
@@ -164,16 +167,11 @@ main()
 		        scanf("%d",&j);
                printf("\n%d\n",kthMin(*tree,&j));printline('*');break;
          default:
-              exit(0);   printf("Hi i m default");
-
-       
+              printf("Hi i m default");
+              break;
       }/*end of switch*/
-          
-
-  }
-    /*end of while*/
-
-   }/*end of main*/
+	}/*end of while*/
+}/*end of main*/
 
 
 
