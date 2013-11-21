@@ -41,7 +41,7 @@ FOR(i,1,n)
 }
 
 mset.clear();
-cd 
+
 gl[n-1]=0;
 mset.insert(el[n-1]);
 

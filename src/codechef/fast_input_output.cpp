@@ -49,50 +49,50 @@ typedef vector< vi > vvi;
 #define MAXX 10000000
 char *ipos, *opos, InpFile[MAXX], OutFile[MAXX], DIP[30];
 inline int input_int(int flag = 0){
-while(*ipos <= 32) ++ipos;
-if ( flag ) return (*ipos++ - '0');
-int x = 0, neg = 0; char c;
-while( true ) {
-c = *ipos++; if(c == '-') neg = 1;
-else{
-if(c <= 32) return neg ? -x : x;
-x = (x << 1) + (x << 3) + c - '0';
-}
-}
+	while(*ipos <= 32) ++ipos;
+	if ( flag ) return (*ipos++ - '0');
+	int x = 0, neg = 0; char c;
+	while( true ) {
+		c = *ipos++; if(c == '-') neg = 1;
+		else{
+			if(c <= 32) return neg ? -x : x;
+			x = (x << 1) + (x << 3) + c - '0';
+		}
+	}
 }
 inline LL input_LL(int flag = 0){
-while(*ipos <= 32) ++ipos;
-if ( flag ) return (*ipos++ - '0');
-LL x = 0, neg = 0; char c;
-while( true ) {
-c = *ipos++; if(c == '-') neg = 1;
-else{
-if(c <= 32) return neg ? -x : x;
-x = (x << 1) + (x << 3) + c - '0';
-}
-}
+	while(*ipos <= 32) ++ipos;
+	if ( flag ) return (*ipos++ - '0');
+	LL x = 0, neg = 0; char c;
+	while( true ) {
+		c = *ipos++; if(c == '-') neg = 1;
+		else{
+			if(c <= 32) return neg ? -x : x;
+			x = (x << 1) + (x << 3) + c - '0';
+		}
+	}
 }
 inline void input_st(char *s){
-while(*ipos <= 32) ++ipos;
-int pos = 0;char c;
-while( true ) {
-c = *ipos++;
-if(c <= 32) {s[pos] = '\0'; break;}
-else s[pos++] = c;
-}
+	while(*ipos <= 32) ++ipos;
+	int pos = 0;char c;
+	while( true ) {
+		c = *ipos++;
+		if(c <= 32) {s[pos] = '\0'; break;}
+		else s[pos++] = c;
+	}
 }
 inline void output(int x){
-int y;
-int dig = 0;
-while(x || !dig) {y = x / 10; DIP[dig++] = x - ((y << 3) + (y << 1)) + '0'; x = y;}
-while(dig--) *opos++ = DIP[dig];
+	int y;
+	int dig = 0;
+	while(x || !dig) {y = x / 10; DIP[dig++] = x - ((y << 3) + (y << 1)) + '0'; x = y;}
+	while(dig--) *opos++ = DIP[dig];
 }
 inline void InitFASTIO(){
-ipos = InpFile; opos = OutFile;
-fread_unlocked(InpFile, MAXX, 1, stdin);
+	ipos = InpFile; opos = OutFile;
+	fread_unlocked(InpFile, MAXX, 1, stdin);
 }
 inline void FlushFASTIO(){
-fwrite_unlocked(OutFile, opos - OutFile, 1, stdout);
+	fwrite_unlocked(OutFile, opos - OutFile, 1, stdout);
 }
 //End of FAST I/O
 #define MAXN 300000+5
@@ -101,43 +101,43 @@ int ones[MAXN];
 int twos[MAXN];
 int flip[MAXN];
 inline void upd(int lo, int hi, int x, int y, int i){
-if(x > hi || y < lo) return;
-int mid;
-if(x <= lo && y >= hi){
-mid = ones[i], ones[i] = (hi-lo+1) - ones[i] - twos[i], twos[i] = mid;
-flip[i] += 1;
-if(flip[i] > 2) flip[i] -= 3;
-return;
-}
-mid = (lo+hi)>>1;
-upd(lo, mid, x, y, 2*i);
-upd(mid+1, hi, x, y, 2*i+1);
-ones[i] = ones[2*i]+ones[2*i+1];
-twos[i] = twos[2*i]+twos[2*i+1];
-if(flip[i] == 1) mid = ones[i], ones[i] = (hi-lo+1) - ones[i] - twos[i], twos[i] = mid;
-else if(flip[i] == 2) mid = twos[i], twos[i] = (hi-lo+1) - ones[i] - twos[i], ones[i] = mid;
+	if(x > hi || y < lo) return;
+	int mid;
+	if(x <= lo && y >= hi){
+		mid = ones[i], ones[i] = (hi-lo+1) - ones[i] - twos[i], twos[i] = mid;
+		flip[i] += 1;
+		if(flip[i] > 2) flip[i] -= 3;
+		return;
+	}
+	mid = (lo+hi)>>1;
+	upd(lo, mid, x, y, 2*i);
+	upd(mid+1, hi, x, y, 2*i+1);
+	ones[i] = ones[2*i]+ones[2*i+1];
+	twos[i] = twos[2*i]+twos[2*i+1];
+	if(flip[i] == 1) mid = ones[i], ones[i] = (hi-lo+1) - ones[i] - twos[i], twos[i] = mid;
+	else if(flip[i] == 2) mid = twos[i], twos[i] = (hi-lo+1) - ones[i] - twos[i], ones[i] = mid;
 }
 inline int que(int lo, int hi, int x, int y, int i, int flag){
-if(x > hi || y < lo) return 0;
-if(x <= lo && y >= hi){
-if(flag == 1) return twos[i];
-else if(flag == 2) return ones[i];
-return (hi-lo+1) - ones[i] - twos[i];
-}
-int mid = (lo+hi)>>1, nflag = (flag+flip[i]);
-if(nflag > 2) nflag -= 3;
-return que(lo, mid, x, y, 2*i, nflag) + que(mid + 1, hi, x, y, 2*i+1, nflag);
+	if(x > hi || y < lo) return 0;
+	if(x <= lo && y >= hi){
+		if(flag == 1) return twos[i];
+		else if(flag == 2) return ones[i];
+		return (hi-lo+1) - ones[i] - twos[i];
+	}
+	int mid = (lo+hi)>>1, nflag = (flag+flip[i]);
+	if(nflag > 2) nflag -= 3;
+	return que(lo, mid, x, y, 2*i, nflag) + que(mid + 1, hi, x, y, 2*i+1, nflag);
 }
 int main(){
-InitFASTIO();
-N = input_int(), M = input_int();
-int op, x, y;
-REP(_,M){
-op = input_int(), x = 1+input_int(), y = 1+input_int();
-if(!op) upd(1, N, x, y, 1);
-else {output(que(1, N, x, y, 1, 0)); *opos++ = '\n';}
-}
-FlushFASTIO();
-//GI;
-return 0;
+	InitFASTIO();
+	N = input_int(), M = input_int();
+	int op, x, y;
+	REP(_,M){
+		op = input_int(), x = 1+input_int(), y = 1+input_int();
+		if(!op) upd(1, N, x, y, 1);
+		else {output(que(1, N, x, y, 1, 0)); *opos++ = '\n';}
+	}
+	FlushFASTIO();
+	//GI;
+	return 0;
 }

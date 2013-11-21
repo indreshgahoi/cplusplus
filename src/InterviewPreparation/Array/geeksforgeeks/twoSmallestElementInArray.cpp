@@ -21,6 +21,7 @@ pair<Integer,Integer> twosmallestElementInArray(Integer A[],size_t){
 			second=A[i];
 		}
 	}
+	return make_pair(first,second);
 }
 
 

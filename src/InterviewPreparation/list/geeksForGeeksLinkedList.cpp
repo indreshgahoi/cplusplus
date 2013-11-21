@@ -16,17 +16,16 @@ using namespace std;
 typedef int Integer;
 
 struct ListNode {
-     int val;
-     ListNode *next;
-     ListNode(int x) : val(x), next(NULL) {}
-
-
+	int val;
+	ListNode *next;
+	ListNode(int x) : val(x), next(NULL) {}
 };
 
 void      push(ListNode **head_ref ,int new_data);
+ListNode* createListFromArray(int *arr , int size);
 
 void      printList(ListNode *head_ref);
-void      deleteList(ListNode **haed_ref);
+
 
 void      reverse(ListNode **head_ref);
 void      insertIntoSortedList(ListNode **head_ref,Integer new_data);
@@ -34,7 +33,13 @@ void      removeDuplicates(ListNode* list);
 void      removeDuplicatesFromUnsortedArrayI(ListNode* list);
 void moveLastNodeToFront(ListNode** head_ref);
 void pairwiseSwapElementsOfList(ListNode *head);
+
+/* delete problem  */
+void      deleteList(ListNode **haed_ref);
 void deleteAlternative(ListNode *list);
+ListNode* deleteNthFormEnd(ListNode *head);
+
+
 ListNode* sortedMerge(ListNode* l1,ListNode* l2);
 ListNode* intersectionInYShapedList(ListNode* list1,ListNode* list2);
 ListNode* intersectionOfTwoSortedLinkedList(ListNode* list1,ListNode* list2);
@@ -64,7 +69,7 @@ void push(ListNode **head_ref ,int new_data){
 	ListNode *new_node=(ListNode *) malloc(sizeof(ListNode));
 	new_node->val=new_data;
 	new_node->next=(*head_ref);
-   *head_ref=new_node;
+	*head_ref=new_node;
 }
 
 void printList(ListNode *head_ref){
@@ -74,7 +79,7 @@ void printList(ListNode *head_ref){
 		printf("[%d]->",head_ref->val);
 		head_ref=head_ref->next;
 	}
-    printf("NULL\n");
+	printf("NULL\n");
 }
 
 void printNode(ListNode *node){
@@ -84,11 +89,20 @@ void printNode(ListNode *node){
 	}
 }
 
+#define ARRAYSIZE(A)   (sizeof(A)/sizeof(A[0]))
+ListNode* createListFromArray(int *arr , int size){
+	ListNode *list = NULL ;
+	for(int i = size-1 ; i>=0 ; --i){
+		push(&list,arr[i]);
+	}
+	return list ;
+}
+
 
 int count(ListNode* head){
-   int counter=0;
-   for(;head;head=head->next)counter++;
-   return counter;
+	int counter=0;
+	for(;head;head=head->next)counter++;
+	return counter;
 }
 
 ListNode* getNode(int new_data){
@@ -99,94 +113,94 @@ ListNode* getNode(int new_data){
 }
 
 ListNode* buildListByString(string elements){
-ListNode* list=NULL;
-int n=elements.size();
-for(int i=n-1;i>=0;i--){
-	push(&list,elements[i]-'0');
+	ListNode* list=NULL;
+	int n=elements.size();
+	for(int i=n-1;i>=0;i--){
+		push(&list,elements[i]-'0');
 
-}
-return list;
+	}
+	return list;
 }
 
 ListNode* buildList(int method){
 	ListNode* list=NULL;
 	switch (method) {
-		case 1245: //sorted insert
-			list=getNode(5);
-				push(&list,4);
-				push(&list,2);
-				push(&list,1);
-				return list;
+	case 1245: //sorted insert
+		list=getNode(5);
+		push(&list,4);
+		push(&list,2);
+		push(&list,1);
+		return list;
 
-			break;
-		case 0:// empty list;
-			list=NULL;
-			break;
-		case 1:
-			list=getNode(1);
-			break;
-		case 12:
-			list=getNode(2);
-			push(&list,1);
-			break;
-		case 123:
-			list=getNode(3);
-			push(&list,2);
-			push(&list,1);
-			break;
-		case 1234:
-			list=getNode(4);
-			push(&list,3);
-			push(&list,2);
-			push(&list,1);
-			break;
-		case 12345:
-		    list=getNode(5);
-		    push(&list,4);
-		    push(&list,3);
-			push(&list,2);
-			push(&list,1);
-			break;
-		case 2345:
-			list=getNode(5);
-			push(&list,4);
-			push(&list,3);
-			push(&list,2);
-			break;
-		default:
-			break;
+		break;
+	case 0:// empty list;
+		list=NULL;
+		break;
+	case 1:
+		list=getNode(1);
+		break;
+	case 12:
+		list=getNode(2);
+		push(&list,1);
+		break;
+	case 123:
+		list=getNode(3);
+		push(&list,2);
+		push(&list,1);
+		break;
+	case 1234:
+		list=getNode(4);
+		push(&list,3);
+		push(&list,2);
+		push(&list,1);
+		break;
+	case 12345:
+		list=getNode(5);
+		push(&list,4);
+		push(&list,3);
+		push(&list,2);
+		push(&list,1);
+		break;
+	case 2345:
+		list=getNode(5);
+		push(&list,4);
+		push(&list,3);
+		push(&list,2);
+		break;
+	default:
+		break;
 	}
- return list;
+	return list;
 }
 
 void insertIntoSortedList(ListNode **head_ref, Integer new_data){
 
- ListNode **current=head_ref;
+	ListNode **current=head_ref;
 
- while((*current)!=NULL && (*current)->val<new_data){
-	 current= &((*current)->next);
- }
- ListNode *new_node=getNode(new_data);
- new_node->next=(*current);
- *current=new_node;
+	while((*current)!=NULL && (*current)->val<new_data){
+		current= &((*current)->next);
+	}
+	ListNode *new_node=getNode(new_data);
+	new_node->next=(*current);
+	*current=new_node;
 
 }
 
 
 
 void reverse(ListNode **head_ref){
- ListNode *head=(*head_ref);
- // handle the baSE CASE EMPTY
- if(head==NULL) return;
+	ListNode *head=(*head_ref);
+	// handle the baSE CASE EMPTY
+	if(head==NULL) return;
 
- ListNode *rest=head->next;
- // HANDLE THE BASE CASE WHEN ONLY ONE NODE IN THE LIST
- if(!rest) return;
- reverse(&rest);
+	ListNode *rest=head->next;
+	// HANDLE THE BASE CASE WHEN ONLY ONE NODE IN THE LIST
+	if(!rest) return;
+	reverse(&rest);
 
- head->next->next=head;
- head->next=NULL;
- (*head_ref)=rest;
+	head->next->next=head;
+	head->next=NULL;
+	(*head_ref)=rest;
 
 
 }
@@ -197,9 +211,9 @@ void deleteList(ListNode **head_ref){
 	ListNode *head=*head_ref;
 
 	while(head){
-	ListNode *temp=head;
+		ListNode *temp=head;
 		head=head->next;
-	free(temp);
+		free(temp);
 	}
 	*head_ref=NULL;
 
@@ -214,14 +228,47 @@ void deleteAlternative(ListNode *list){
 		ListNode *temp=list->next;
 		list->next=list->next->next;
 		free(temp);
-		if(list)
-		list=list->next;
+		if(list->next)
+			list=list->next;
 
 	}
 
 }
 
+ListNode* deleteNthFormEnd(ListNode *head , int n){
 
+	ListNode *cur ,*pre ;
+	ListNode dummy(0) ;
+	int count =  n ;
+	dummy.next = head ;
+	head = &dummy ;
+	pre = cur = head ;
+
+	while(cur && count--){
+		cur = cur->next ;
+	}
+	if(cur)
+	{
+
+		while(cur->next != NULL){
+			pre=pre->next ;
+			cur=cur->next;
+		}
+		ListNode *t = pre->next ;
+		pre->next = t->next ;
+		delete t ;
+	}
+	return dummy.next ;
+}
+
+void test_0_deleteNthFronEnd(){
+	ListNode *list = NULL ;
+	int arr[] = {9,8,7,6,5,4,3,2,1};
+	list = createListFromArray(arr,ARRAYSIZE(arr));
+	printList(list);
+	list = deleteNthFormEnd(list,1);
+	printList(list);
+}
 
 ListNode* getNthNodeFromStart(ListNode *head,int index){
 
@@ -229,8 +276,8 @@ ListNode* getNthNodeFromStart(ListNode *head,int index){
 	int counter=0;
 
 	for(ListNode *iterator=head;iterator!=NULL;iterator=iterator->next,counter++)
-		 if(counter==index) return iterator;
-	 assert(0);
+		if(counter==index) return iterator;
+	assert(0);
 	ListNode *res=NULL;
 	return res;
 
@@ -243,9 +290,9 @@ ListNode* getMiddleNodeI(ListNode *head){
 	ListNode *slowNode=head;
 
 	if(head!=NULL){
-	while(fastNode->next!=NULL && fastNode->next->next!=NULL)
-		fastNode=fastNode->next->next;
-	    slowNode=slowNode->next;
+		while(fastNode->next!=NULL && fastNode->next->next!=NULL)
+			fastNode=fastNode->next->next;
+		slowNode=slowNode->next;
 	}
 	return slowNode;
 
@@ -272,7 +319,7 @@ ListNode* getNthNodeFromLastI(ListNode *head,int n){
 	static int i=0;
 	// base case
 	if(head==NULL) return head;
-	 getNthNodeFromLastI(head->next,n);
+	getNthNodeFromLastI(head->next,n);
 	if(++i==n) return head;
 
 
@@ -281,24 +328,24 @@ ListNode* getNthNodeFromLastI(ListNode *head,int n){
 
 ListNode* getNthNodeFromLastII(ListNode *head,int n){
 
- ListNode *ref_Pointer=head;
- ListNode *main_Pointer=head;
+	ListNode *ref_Pointer=head;
+	ListNode *main_Pointer=head;
 
- if(head!=NULL){
-	 int count=0;
-	 while(count<n){
-		 assert(ref_Pointer!=NULL);
-		 ref_Pointer=ref_Pointer->next;
-		 count++;
-	 }
-}
+	if(head!=NULL){
+		int count=0;
+		while(count<n){
+			assert(ref_Pointer!=NULL);
+			ref_Pointer=ref_Pointer->next;
+			count++;
+		}
+	}
 
- while(ref_Pointer){
- 		 ref_Pointer=ref_Pointer->next;
- 		 main_Pointer=main_Pointer->next;
- }
+	while(ref_Pointer){
+		ref_Pointer=ref_Pointer->next;
+		main_Pointer=main_Pointer->next;
+	}
 
- return main_Pointer;
+	return main_Pointer;
 
 }
 
@@ -306,7 +353,7 @@ ListNode* getNthNodeFromLastII(ListNode *head,int n){
 Write a function that counts the number of times a given int occurs
 in a Linked List
 
-*/
+ */
 
 int countData(ListNode *head,int target){
 
@@ -328,7 +375,7 @@ This is the fastest method. Traverse linked list using two pointers.
  meet at some node then there is a loop.  If pointers do not meet then
  linked list doesn’t have loop.
 
-*/
+ */
 bool detectLoop(ListNode *list){
 
 	if(list==NULL) return false;
@@ -345,36 +392,36 @@ bool detectLoop(ListNode *list){
 			return true;
 		}
 	}
-     return false;
+	return false;
 }
 
 ListNode* __intersectionInYshapedList(ListNode* list1,ListNode* list2,int d){
 
- while(d--){
-	list1=list1->next;
- }
- while(list1 && list2){
-	 if(list1==list2)
-		 return list1;
-	 list1=list1->next;
-	 list2=list2->next;
- }
- return NULL;
+	while(d--){
+		list1=list1->next;
+	}
+	while(list1 && list2){
+		if(list1==list2)
+			return list1;
+		list1=list1->next;
+		list2=list2->next;
+	}
+	return NULL;
 }
 
 
 ListNode* intersectionInYShapedList(ListNode* list1,ListNode* list2){
-  int count1=count(list1);
-  int count2=count(list2);
-  ListNode *res=NULL;
-  if(count1>count2)
-  {
-	  res=__intersectionInYshapedList(list1,list2,count1-count2);
-  }
-  else{
-	  res=__intersectionInYshapedList(list2,list1,count2-count1);
-  }
- return res;
+	int count1=count(list1);
+	int count2=count(list2);
+	ListNode *res=NULL;
+	if(count1>count2)
+	{
+		res=__intersectionInYshapedList(list1,list2,count1-count2);
+	}
+	else{
+		res=__intersectionInYshapedList(list2,list1,count2-count1);
+	}
+	return res;
 }
 
 
@@ -385,18 +432,18 @@ ListNode* intersectionOfTwoSortedLinkedList(ListNode* list1,ListNode* list2){
 	ListNode** lastPtrRef=&result;
 
 	while(list1!=NULL && list2!=NULL){
-	   if(list1->val<list2->val){
-		   list1=list1->next;
-	   }
-	   else if(list2->val<list1->val){
-		   list2=list2->next;
-	   }
-	   else{
-		   push(lastPtrRef,list1->val);
-		   lastPtrRef= &(*lastPtrRef)->next;
-		   list1=list1->next;
-		   list2=list2->next;
-	   }
+		if(list1->val<list2->val){
+			list1=list1->next;
+		}
+		else if(list2->val<list1->val){
+			list2=list2->next;
+		}
+		else{
+			push(lastPtrRef,list1->val);
+			lastPtrRef= &(*lastPtrRef)->next;
+			list1=list1->next;
+			list2=list2->next;
+		}
 
 	}
 	return result;
@@ -405,25 +452,25 @@ ListNode* intersectionOfTwoSortedLinkedList(ListNode* list1,ListNode* list2){
 
 void removeDuplicates(ListNode* list){
 
- ListNode *current=list;
+	ListNode *current=list;
 
- //Handle emptyCase
- if(!current) return;
+	//Handle emptyCase
+	if(!current) return;
 
- ListNode* next_next=NULL;
+	ListNode* next_next=NULL;
 
- while(current->next!=NULL){
+	while(current->next!=NULL){
 
-   if(current->val==current->next->val){
-	   next_next=current->next->next;
-	   free(current->next);
-	   current->next=next_next;
-   }
-   else{
-	   current=current->next;
-   }
+		if(current->val==current->next->val){
+			next_next=current->next->next;
+			free(current->next);
+			current->next=next_next;
+		}
+		else{
+			current=current->next;
+		}
 
- }
+	}
 
 }
 
@@ -434,18 +481,18 @@ void removeDuplicatesFromUnsortedArrayI(ListNode* list){
 
 	for(ListNode* i=list;i!=NULL && i->next!=NULL;i=i->next){
 
-	 for(ListNode* j=i;j->next!=NULL;){
+		for(ListNode* j=i;j->next!=NULL;){
 
-	    if(i->val==j->next->val){
-	    	ListNode *temp=j->next;
-	    	j->next=j->next->next;
-	    	free(temp);
-	    }
-	    else{
-	    	j=j->next;
-	    }
+			if(i->val==j->next->val){
+				ListNode *temp=j->next;
+				j->next=j->next->next;
+				free(temp);
+			}
+			else{
+				j=j->next;
+			}
 
-	 }
+		}
 
 	}
 
@@ -455,19 +502,19 @@ void removeDuplicatesFromUnsortedArrayI(ListNode* list){
 bool twoListAreIdentical(ListNode* list1,ListNode *list2){
 
 
-   while(true){
-	   if(list1==NULL && list2==NULL)
-		   return true;
-	   if(list1!=NULL && list2==NULL)
-		   return false;
-	   if(list2!=NULL && list1==NULL)
-	   		   return false;
-	   if(list1->val!=list2->val)
-		   return false;
-	   list1=list1->next;
-	   list2=list2->next;
-   }
-   return false;
+	while(true){
+		if(list1==NULL && list2==NULL)
+			return true;
+		if(list1!=NULL && list2==NULL)
+			return false;
+		if(list2!=NULL && list1==NULL)
+			return false;
+		if(list1->val!=list2->val)
+			return false;
+		list1=list1->next;
+		list2=list2->next;
+	}
+	return false;
 }
 
 
@@ -490,19 +537,19 @@ void testCaseForRemoveDuplicates(){
 
 
 bool isPalindrome(ListNode** left,ListNode *right ){
-   //Handle Base Case
-   if(!right) return true;
+	//Handle Base Case
+	if(!right) return true;
 
-   bool isSubListPalindrome=isPalindrome(left,right->next);
+	bool isSubListPalindrome=isPalindrome(left,right->next);
 
-   if(!isSubListPalindrome)
-	   return false;
-   if(!((*left)->val==right->val))
-	return false;
-   else{
-	  (*left)=(*left)->next;
-	   return true;
-    }
+	if(!isSubListPalindrome)
+		return false;
+	if(!((*left)->val==right->val))
+		return false;
+	else{
+		(*left)=(*left)->next;
+		return true;
+	}
 }
 
 void moveLastNodeToFront(ListNode** head_ref){
@@ -543,15 +590,15 @@ ListNode* sortedMerge(ListNode* l1,ListNode* l2){
 		}
 		else{
 			*lastPtrRef=l2;
-			 l2=l2->next;
+			l2=l2->next;
 		}
 		lastPtrRef=&(*lastPtrRef)->next;
 	}
-    if(l1)
-    	*lastPtrRef=l1;
-    else
-    	*lastPtrRef=l2;
-    return result ;
+	if(l1)
+		*lastPtrRef=l1;
+	else
+		*lastPtrRef=l2;
+	return result ;
 }
 
 void TestCaseForsortedInsert(){
@@ -564,19 +611,19 @@ void TestCaseForsortedInsert(){
 void YShapedtestCase(){
 	ListNode *p1=getNode(1),*p2=getNode(2),*p3=getNode(3),
 			*p4=getNode(4),*p5=getNode(5),*p6=getNode(6),*p7=getNode(7),*p8=getNode(8),*p9=getNode(9);
-    ListNode *p11=getNode(11),*p12=getNode(12),*p13=getNode(13),*p14=getNode(14);
-       p1->next=p2; p11->next=p12;
-       p2->next=p3; p12->next=p13;
-       p3->next=p4; p13->next=p14;
-       p4->next=p5; p14->next=p5;
-       p5->next=p6;
-       p6->next=p7;
-       p7->next=p8;
-       p8->next=p9;
+	ListNode *p11=getNode(11),*p12=getNode(12),*p13=getNode(13),*p14=getNode(14);
+	p1->next=p2; p11->next=p12;
+	p2->next=p3; p12->next=p13;
+	p3->next=p4; p13->next=p14;
+	p4->next=p5; p14->next=p5;
+	p5->next=p6;
+	p6->next=p7;
+	p7->next=p8;
+	p8->next=p9;
 
-      printList(p1);
-      printList(p11);
-      printList(intersectionInYShapedList(p1,p11));
+	printList(p1);
+	printList(p11);
+	printList(intersectionInYShapedList(p1,p11));
 
 }
 
@@ -590,19 +637,19 @@ void testCaseFormoveLastNodeToFront(){
 
 void testCaseForPairWiseSwap(){
 	ListNode* list=buildList(12345);
-		printList(list);
-		pairwiseSwapElementsOfList(list);
-		printList(list);
+	printList(list);
+	pairwiseSwapElementsOfList(list);
+	printList(list);
 }
 
 void testCaseForintersectionTwoSortedArray(){
 	ListNode *list1=buildListByString("1244455678");
 	ListNode *list2=buildListByString("12344689");
-		printList(list1);
-		printList(list2);
-   ListNode *intersection=intersectionOfTwoSortedLinkedList(list1,list2);
-   printf("Intersection=\n");
-   printList(intersection);
+	printList(list1);
+	printList(list2);
+	ListNode *intersection=intersectionOfTwoSortedLinkedList(list1,list2);
+	printf("Intersection=\n");
+	printList(intersection);
 }
 
 void testForAlterNateDelete(){
@@ -623,15 +670,16 @@ void testForSortedMerge(){
 }
 int main(){
 	//TestCaseForsortedInsert();
-    // YShapedtestCase();
+	// YShapedtestCase();
 	//testCaseForRemoveDuplicates();
 	//testCaseForRemoveDuplicatesFprUnSorted();
 	//testCaseFormoveLastNodeToFront();
 	//testCaseForPairWiseSwap();
 	//testCaseForintersectionTwoSortedArray();
 	//testForAlterNateDelete();
-	testForSortedMerge();
- return 0;
+	//testForSortedMerge();
+	test_0_deleteNthFronEnd();
+	return 0;
 }
 
 

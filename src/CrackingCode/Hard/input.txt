@@ -1,0 +1,14 @@
+cat
+banana
+dog
+nana
+walk
+walker
+dogwalker
+s
+catswalker
+bigdogwalker
+big
+catanddog
+and
+bigcatbananadog

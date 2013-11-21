@@ -1,0 +1,1277 @@
+0 :- fre=1 GURGAON: 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+3 :- fre=1 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+3 :- fre=1 on 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+3 :- fre=1 on 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+3 :- fre=1 on 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+3 :- fre=1 on 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 The 
+2 :- fre=1 Centre 
+3 :- fre=1 on 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 on 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=1 Tuesday 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=2 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 GURGAON: 
+1 :- fre=1 Tuesday 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+1 GURGAON: 
+2 said 
+0 :- fre=1 Tuesday 
+1 :- fre=2 said 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 Tuesday 
+1 :- fre=2 said 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 Tuesday 
+1 :- fre=2 said 
+2 :- fre=1 Centre 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+1 Tuesday 
+2 had 
+0 :- fre=1 Centre 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 Centre 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 Centre 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=1 Centre 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+1 Centre 
+2 Patna 
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+0 :- fre=2 Patna 
+1 :- fre=2 said 
+2 :- fre=2 had 
+3 :- fre=2 The 
+4 :- fre=3 on 
+
+
+1 Patna 
+2 input 
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 said 
+1 :- fre=2 The 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+1 said 
+2 we 
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=3 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 The 
+1 :- fre=3 we 
+2 :- fre=2 had 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+1 The 
+2 there 
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=2 had 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+1 had 
+2 was 
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+0 :- fre=3 was 
+1 :- fre=3 we 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=3 on 
+
+
+1 was 
+2 the 
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=3 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=4 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=5 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=5 the 
+
+
+0 :- fre=3 we 
+1 :- fre=4 on 
+2 :- fre=3 there 
+3 :- fre=4 input 
+4 :- fre=5 the 
+
+
+1 we 
+2 in 
+0 :- fre=3 there 
+1 :- fre=4 on 
+2 :- fre=4 in 
+3 :- fre=4 input 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 on 
+2 :- fre=4 in 
+3 :- fre=4 input 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=4 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=4 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=3 there 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+1 there 
+2 We 
+0 :- fre=4 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=4 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=4 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=4 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=5 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=5 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=6 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=6 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=7 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=7 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=7 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=8 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=8 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=8 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=8 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=8 the 
+
+
+0 :- fre=5 We 
+1 :- fre=5 input 
+2 :- fre=5 in 
+3 :- fre=7 on 
+4 :- fre=8 the 
+
+

@@ -18,9 +18,9 @@ int KthSmallestElementInTwoSortedArray(vector<int> A, vector<int> B,int k){
 	int res;
 	int i=0,j=0,step=0;
 	while(true){
-		if(A[i]<B[j] && i< A.size()){
+		if(  i<A.size() && A[i]<B[j]){
 			step++;i++;}
-		else if(A[i]>B[j] && j<B.size()){
+		else if( j<B.size() && A[i]>B[j] ){
 			step++;j++;}
 		else{
 			if(i<A.size())

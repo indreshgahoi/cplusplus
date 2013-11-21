@@ -7,8 +7,10 @@
 #include<iostream>
 #include<vector>
 #define REP(i,n) for(int i=0;i<n;i++)
+
 using namespace std;
 int globalMax=0;
+
 void generate(vector<int> f ,int start,int w,int localmax){
    if(w==1){
 	   int sum=0;
@@ -25,6 +27,7 @@ void generate(vector<int> f ,int start,int w,int localmax){
 		generate(f,i+1,w-1,sum>localmax?sum:localmax);
 	}
 	}
+
 int getMostWork(vector<int> folder,int workers){
 
 
@@ -32,11 +35,13 @@ int getMostWork(vector<int> folder,int workers){
 	generate(folder,0,workers,0);
 	return globalMax;
 }
+
 int cmp(int a,int b){
 	if(a>b)return 1;
 	if(b>a) return -1;
 	return 0;
 }
+
 int worstRank(vector <int> v){
 	int x=v[0],y=v[1],z=v[2];
 	int c=(x+y+z)-min(x,min(y,z));

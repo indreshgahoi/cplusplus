@@ -16,11 +16,25 @@ Given two integers n and k, return all possible combinations of k numbers out of
 For example,
 If n = 4 and k = 2, a solution is:
 */
+
+template<class T>
+ostream& operator<<(ostream &out,const vector<T>& V){
+	out<<"[";
+	for(typename vector<T>::const_iterator it=V.begin();it!=V.end();it++){
+	 out<<" "<<*it;
+	}
+	out<<"]"<<endl;
+	return out;
+}
+
+
+
+
 vector<vector<int> > res;
 int size,depth;
 void combineHelper(int n,vector<int> &path){
     if(n>depth) return;
-    if(path.size()>=k) return;
+    if(path.size()>=size) return;
    combineHelper(n+1,path);
    path.push_back(n);
    if(path.size()==size){
@@ -40,6 +54,9 @@ vector<vector<int> > combine(int n, int k) {
        return res;
     }
 int main(){
+
+    combine(4,2);
+    cout<<res;
 	return 0;
 }
 

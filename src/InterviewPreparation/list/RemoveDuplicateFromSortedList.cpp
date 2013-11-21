@@ -6,6 +6,10 @@
  */
 #include<iostream>
 #include<cstdio>
+#include<stdlib.h>
+
+
+#define ARRAYSIZE(A)  (sizeof(A) / sizeof(A[0]))
 
 struct ListNode{
 	int val;
@@ -14,6 +18,42 @@ struct ListNode{
 
 	}
 };
+
+void push(ListNode **head_ref ,int new_data){
+	ListNode *new_node=(ListNode *) malloc(sizeof(ListNode));
+	new_node->val=new_data;
+	new_node->next=(*head_ref);
+   *head_ref=new_node;
+}
+
+ListNode *getListFromArray(int *arr ,int size){
+	ListNode *head = NULL ;
+	int i =0 ;
+	for( i =size-1 ; i>=0 ; --i ){
+		push(&head,arr[i]);
+	}
+	return head ;
+}
+void printList(ListNode *head_ref){
+
+	printf("list=\n      ");
+	while(head_ref){
+		printf("[%d]->",head_ref->val);
+		head_ref=head_ref->next;
+	}
+    printf("NULL\n");
+}
+
+void printNode(ListNode *node){
+	if(!node) {printf("[NULL]\n"); }
+	else{
+		printf("(%x)[val=%d,next(%x)]\n",node,node->val,node->next);
+	}
+}
+
+
+
+
 //Given 1->2->3->3->4->4->5, return 1->2->5.
 //Given 1->1->1->2->3, return 2->3.
  ListNode *deleteDuplicatesii(ListNode *head) {
@@ -55,6 +95,23 @@ struct ListNode{
   return head;
 }
 
+ //Given 1->2->3->3->4->4->5, return 1->2->5.
+ //Given 1->1->1->2->3, return 2->3.
+void test_1_deleteDuplicatesii(){
+	int arr [] = {1,2,3,3,4,4,5};
+	ListNode *head = getListFromArray(arr, ARRAYSIZE(arr));
+	printList(head);
+	head=deleteDuplicatesii(head);
+	printList(head);
+}
+void test_2_deleteDuplicatesii(){
+	int arr [] = {1,1,1,2,3};
+	ListNode *head = getListFromArray(arr, ARRAYSIZE(arr));
+	printList(head);
+	head=deleteDuplicatesii(head);
+	printList(head);
+}
+
 // Given 1->1->2, return 1->2.
 // Given 1->1->2->3->3, return 1->2->3.
 
@@ -65,7 +122,7 @@ struct ListNode{
 
 	 while(y){
 
-		 if((y->val)==(x->val)){
+		 if((x->val)==(y->val)){
 			 ListNode *temp=y;
 			 x->next=y->next;
 			 y=y->next;
@@ -78,4 +135,33 @@ struct ListNode{
 	 }
    return head;
  }
+
+
+ // Given 1->1->2, return 1->2.
+ // Given 1->1->2->3->3, return 1->2->3.
+ void test_1_deleteDuplicates(){
+	 int arr [] = {1,1,2};
+	 	ListNode *head = getListFromArray(arr, ARRAYSIZE(arr));
+	 	printList(head);
+	 	head=deleteDuplicates(head);
+	 	printList(head);
+ }
+
+ void test_2_deleteDuplicates(){
+	 int arr [] = {1,1,2,3,3};
+	 	ListNode *head = getListFromArray(arr, ARRAYSIZE(arr));
+	 	printList(head);
+	 	head=deleteDuplicates(head);
+	 	printList(head);
+ }
+
+
+ int main(){
+
+    //test_1_deleteDuplicatesii();
+    //test_2_deleteDuplicatesii();
+	 test_1_deleteDuplicates();
+	 test_2_deleteDuplicates();
+	 return 0 ;
+}
 

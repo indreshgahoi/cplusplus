@@ -15,14 +15,14 @@ Output S[n-1][m-1]
 #define FOR(a,b,i) for(i=a;i<=b;i++)
 int main()
 {
-    int row,col,i,j,a,b;
+    int row,col,i,j,b;
     printf("Enter the no of row and column:");
     scanf("%d%d",&row,&col);
     int a[row][col];
     int c[row][col];
     FOR(0,row-1,i)
     {
-        FOR(0.col,j)
+        FOR(0,col,j)
         {
             scanf("%d",&a[i][j]);
             c[i][j]=a[i][j];
@@ -31,7 +31,7 @@ int main()
 
     FOR(0,row-1,i)
     {
-        FOR(0.col,j)
+        FOR(0,col,j)
         {
           c[i][j]=a[i][j]+( a=i>0?c[i-1][j]:0 >= b=j>0?c[i][j-1]:0?a:b) ;
         }

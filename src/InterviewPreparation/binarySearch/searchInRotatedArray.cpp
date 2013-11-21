@@ -19,7 +19,7 @@ bool search(int A[], int n, int target) {
 		if(A[mid]==target)
 			return mid;
 		//In sorted sorted part
-		if(A[low]==A[mid] &&(l+1)!=r){
+		if(A[low]==A[mid] &&(low+1)!=high){
 			low++;
 		}
 		else if(A[low]<A[mid]){
@@ -39,4 +39,47 @@ bool search(int A[], int n, int target) {
 
 }
 
+class Solution
+{
+	bool search(int A[] , int n , int key)
+	{
+		int m , l , r ;
+		l = 0 , r= n-1;
+		while(l <= r)
+		{
+			if(l==r) return true ;
+
+			m = l + (r-l)/2;
+			if(A[m]==key)
+				return  m ;
+			if(A[l] < A[m]) // first half is sorted
+			{
+				if(key >= A[l] && key < A[m])
+				{
+					r = m-1;
+				}
+				else
+				{
+					l = m+1 ;
+				}
+			}
+			else if(A[l] > A[m]) //second half is sorted
+			{
+				if(key<= A[r] && key > A[m])
+				{
+					l = m+1 ;
+				}
+				else
+				{
+					r= m-1 ;
+				}
+			}
+			else // do linear search in Duplicate case
+			{
+				l++ ;
+			}
+		}
+		return false ;
+	}
+};
 

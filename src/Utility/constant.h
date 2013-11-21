@@ -18,12 +18,12 @@
 #include<pthread.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include<time.h>
 using namespace std;
 
 #define FOR(_i,a,b) for(int _i=a;_i<b;_i++)
 #define REP(_i,n)    for(int _i=0;_i<n;_i++)
 
-#define ARRAYSIZE(A) (sizeof(A)/sizeof(A[0]))
 typedef int Integer ;
 
 void driver();
@@ -47,8 +47,45 @@ ostream& operator<<(ostream &out,const vector<T>& V){
 	return out;
 }
 
+void getInput(vector<int> &v)
+{
+#define ARRAYSIZE(A) sizeof(A)/sizeof(A[0])
+	int arr[] = {-1,-1,-1,1,1};
+	int size = ARRAYSIZE(arr) ;
+	for(int iter = 0 ; iter < size ; ++iter)
+	{
+		v.push_back(arr[iter]);
+	}
+}
+
+class Timer
+{
+public:
+	Timer()
+	{
+		start = clock();
+	}
+
+	long long int elapsed()
+	{
+		long long int ela = clock() -start ;
+		start = clock();
+		cout<<"elapsed time = "<<  ela/CLOCKS_PER_SEC;
+		return ela/CLOCKS_PER_SEC;
+	}
+	void reset()
+	{
+		start = clock();
+	}
+
+private :
+ clock_t start ;
+};
+
+
 int main(){
 	driver();
+	cout<<"\n";
 	return 0;
 }
 #endif /* CONSTANT_H_ */

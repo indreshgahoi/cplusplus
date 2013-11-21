@@ -31,7 +31,7 @@ int maxdiff(int *a,int n)
 		rmax[i]=max(a[i],rmax[i-1]);
 	}
 
-	i = 0, j = 0, maxDiff = -1;
+	int i = 0, j = 0, maxDiff = -1;
 	while (j < n && i < n)
 	{
 		if (lmin[i] < rmax[j])

@@ -1,4 +1,5 @@
-/* this program is to find the maximum sum sub array contiguous sub array should be :)
+/* this program is to find the maximum sum sub array contiguous sub array
+should be :)
 algorithm here is used known as the Kadane's algorithm*/
 #include<stdio.h>
 int kadanesum(int arr[],int n,int *maxstart,int *maxend)

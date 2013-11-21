@@ -79,6 +79,7 @@ using  namespace std;
  int minDepth(TreeNode *root);
  int maxWidth(TreeNode* root);
  int height(TreeNode* root);
+ /* Longest lesf to leaf path */
  int diameter(TreeNode* root);
  int diameterN2(TreeNode* root);
 
@@ -1138,6 +1139,34 @@ int maxPathSum(TreeNode *root){
 }
 
 
+// maxPathSum method 2
+int max(int x ,int y) { return x > y ? x : y ; }
+
+    int maxPathSumUtil(TreeNode *root ,  int *maX){
+        if(!root) return 0;
+        if(!root->left && !root->right ){
+           if(*maX < root->val)
+             *maX = root->val ;
+           return root->val ;
+        }
+
+        int l = max(0,maxPathSumUtil(root->left , maX));
+        int r = max(0,maxPathSumUtil(root->right , maX));
+        int res = max(l,r)+root->val ;
+
+        *maX = max(*maX,l+r+root->val);
+        return res ;
+    }
+
+   int maxPathSum2(TreeNode *root) {
+        // IMPORTANT: Please reset any member data you declared, as
+        // the same Solution instance will be reused for each test case.
+        int maX=-9999999 ;
+        maxPathSumUtil(root,&maX);
+        return maX;
+
+    }
+
 // Sum Tree Problem
 
 
@@ -1296,7 +1325,7 @@ bool hasPathSum(TreeNode *root, int sum) {
 
       // Start typing your C/C++ solution below
       // DO NOT write int main() function
-    if(!root) return false;
+    if(!root) return sum==0;
 
 		if(0==(sum-(root->val))&&root->left==NULL && root->right==NULL ){
 			return true;

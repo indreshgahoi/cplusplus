@@ -19,10 +19,10 @@ int findMaxSum(int A[],int n){
 }
 
 void driver(){
-int A[]={1,2,4,6,7,2,3,5,45,10};
-size_t size=ARRAYSIZE(A);
-printf("max Sum=%d",findMaxSum(A,size));
-printArray(A,size);
+	int A[]={1,2,4,6,7,2,3,5,45,10};
+	size_t size=ARRAYSIZE(A);
+	printf("max Sum=%d",findMaxSum(A,size));
+	printArray(A,size);
 }
 int main(){
 	driver();

@@ -1,4 +1,4 @@
-/http://www.codechef.com/MAY12/problems/TWSTR
+//http://www.codechef.com/MAY12/problems/TWSTR
 //Data Structure includes
 #include<vector>
 #include<stack>
@@ -53,40 +53,40 @@ typedef vector< PII > VPII;
 /*Main Code*/
 int main()
 {
-//freopen("twstr.txt","r",stdin);
-int n,d;
-char *p;
-s(n);
-VPII pri(n);
-char in[n][2000];
-REP(i,n)
-{
-ss(in[i]);
-s(d);
-pri[i]=mp(d,i);
-}
-sort(all(pri));
-//reverse(all(pri));
-int q;
-s(q);
-char str[2000];
-REP(i,q)
-{
-int ok=0;
-ss(str);
-int j;
-for(j=n-1;j>=0;j--)
-{
-int match=1;
-int slen=strlen(str);
-int inlen=strlen(in[pri[j].second]);
-for(int m=0;m<slen && m<inlen;m++)if(in[pri[j].second][m]!=str[m]){match=0;break;}
-if(match){ok=1;break;}
-//p=strstr(in[pri[j].second],str);
-//if(p==in[pri[j].second])break;
-}
-if(ok)cout<<in[pri[j].second]<<endl;
-else printf("NO\n");
-}
-return 0;
+	//freopen("twstr.txt","r",stdin);
+	int n,d;
+	char *p;
+	s(n);
+	VPII pri(n);
+	char in[n][2000];
+	REP(i,n)
+	{
+		ss(in[i]);
+		s(d);
+		pri[i]=mp(d,i);
+	}
+	sort(all(pri));
+	//reverse(all(pri));
+	int q;
+	s(q);
+	char str[2000];
+	REP(i,q)
+	{
+		int ok=0;
+		ss(str);
+		int j;
+		for(j=n-1;j>=0;j--)
+		{
+			int match=1;
+			int slen=strlen(str);
+			int inlen=strlen(in[pri[j].second]);
+			for(int m=0;m<slen && m<inlen;m++)if(in[pri[j].second][m]!=str[m]){match=0;break;}
+			if(match){ok=1;break;}
+			//p=strstr(in[pri[j].second],str);
+			//if(p==in[pri[j].second])break;
+		}
+		if(ok)cout<<in[pri[j].second]<<endl;
+		else printf("NO\n");
+	}
+	return 0;
 }
