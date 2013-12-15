@@ -89,7 +89,7 @@ void RearrangePositiveAndNegativeNumbers(vector<int> &V)
 void getInput(vector<int> &v)
 {
 #define ARRAYSIZE(A) sizeof(A)/sizeof(A[0])
-	int arr[] = {-1,-1,-1,1,1};
+	int arr[] = {-2,-3,1,2,3,-4,-5,6,7,-10,11,-12};
 	int size = ARRAYSIZE(arr) ;
 	for(int iter = 0 ; iter < size ; ++iter)
 	{

@@ -36,20 +36,29 @@ struct TreeLinkNode {
 
 //work Only if it's perfect Binary Tree
 //Every node must have two children or none
+
+
+/*
+ *  Perfect Binary Tree
+ *
+ *  Are leafs node are at the same level ;
+ *  ans every parent has two children ;
+ *
+ * Do ii pre-order fashion
+ */
 void connect1(TreeLinkNode *root) {
 	// Start typing your C/C++ solution below
 	// DO NOT write int main() function
 	if(!root)
 		return;
 
-	if(root->left && root->right){
-
+	if(root->left && root->right) // node is non-leaf
+	{
 		root->left->next=root->right;
 		if(root->next)
 			root->right->next=root->next->left;
 		else
 			root->right->next=NULL;
-
 	}
 	connect1(root->left);
 	connect1(root->right);

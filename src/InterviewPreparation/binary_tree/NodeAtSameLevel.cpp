@@ -43,30 +43,76 @@ struct TreeNode {
  *
  *
  */
+#define debug(x) cout<<#x<<"="<<x<<" ";
+#define nl cout<<"\n";
+#define tab cout<<"	 ";
 class Solution {
 public:
+
+	bool isLeafAtSameLevelUtil(TreeNode* root ,int &preLeafLevel ,bool &isSameLevel , int l)
+	{
+		if(root==0)
+		{
+
+			return true ;
+		}
+		if(root->left==0 && root->right==0)
+		{
+			if(preLeafLevel==-1)
+			{
+				preLeafLevel = l ;
+				isSameLevel = true ;
+				return true ;
+			}
+
+
+			isSameLevel = isSameLevel && (preLeafLevel==l);
+
+			return isSameLevel ;
+		}
+		if(isSameLevel)
+		{
+			return isLeafAtSameLevelUtil(root->left,preLeafLevel,isSameLevel,l+1)&&
+					isLeafAtSameLevelUtil(root->right,preLeafLevel,isSameLevel,l+1);
+		}
+		return false ;
+	}
+
+	bool isLeafAtSameLevel(TreeNode* root)
+	{
+		bool x = true ;
+		int pre = -1 ;
+		return isLeafAtSameLevelUtil(root,pre,x,0);
+	}
 
 };
 
 
 void test()
 {
-	       /*          10
-	        *       7       14
-	        *     6   8   13   15
-	        *       18
-	        */
+	/*          10
+	 *       7       14
+	 *     6   8   13   15
+	 *       18
+	 */
 
 	TreeNode *root = new TreeNode(10);
 	root->left = new TreeNode(7);
 	root->right = new TreeNode(14);
 	root->right->left = new TreeNode(13);
 	root->right->right = new TreeNode(15);
-	root->left->left = new TreeNode(6);
-	root->left->right = new TreeNode(8);
-	root->left->left->right = new TreeNode(18);
+	//root->left->left = new TreeNode(6);
+	//root->left->right = new TreeNode(8);
+	//root->left->left->right = new TreeNode(18);
 	Solution sl ;
-	cout<<sl.levelOrder(root);
+	if(sl.isLeafAtSameLevel(root))
+	{
+		cout<<"Ya at Same Level" ;
+	}
+	else
+	{
+		cout <<"Oh No they Are not At SameLevel" ;
+	}
 }
 
 

@@ -32,8 +32,10 @@ int maximalRectangle(vector<vector<char> > &matrix) {
 
    for(int i=0;i<row;i++){
 	   int left=0,right=col-1;
-	   for(int j=0;j<col;j++){
-		   if(matrix[i][j]=='1'){
+	   for(int j=0;j<col;j++)
+	   {
+		   if(matrix[i][j]=='1')
+		   {
 			   H[j]=H[j]+1;
 			   L[j]=max(L[j],left);
 		   }
@@ -43,12 +45,15 @@ int maximalRectangle(vector<vector<char> > &matrix) {
 		   }
 
 	   }
-	   for(int j=col-1;j>=0;j--){
-		   if(matrix[i][j]=='1'){
+	   for(int j=col-1;j>=0;j--)
+	   {
+		   if(matrix[i][j]=='1')
+		   {
 			   R[j]=min(R[j],right);
 			   maxArea=max(maxArea,(R[j]-L[j]+1)*H[j]);
 		   }
-		   else{
+		   else
+		   {
 
 			   right=j-1;
 			   R[j]=col-1;

@@ -89,6 +89,14 @@ ListNodeWithArbitPointert* copy(ListNodeWithArbitPointert *list){
  return copyList;
 }
 
+
+/*
+ *  1 -> copy linked list and insert to next
+ *  2 -> set random Pointer for new list
+ *  3 -> restore lsit list
+ *
+ *
+ */
 ListNodeWithArbitPointert* copy2(ListNodeWithArbitPointert *list){
 
 

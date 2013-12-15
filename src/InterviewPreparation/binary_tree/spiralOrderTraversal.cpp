@@ -55,7 +55,6 @@ void spiralTraversal(TreeNode *root){
         	if(current->right)
         		s1.push(current->right);
         }
-
 	}
 
 

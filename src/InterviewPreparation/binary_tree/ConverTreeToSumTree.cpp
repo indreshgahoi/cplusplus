@@ -16,9 +16,9 @@ For example, the following tree
 
                   10
                /      \
-	     -2        6
+	         -2        6
            /   \      /  \
-	 8     -4    7    5
+	      8     -4    7    5
 
 should be changed to
 

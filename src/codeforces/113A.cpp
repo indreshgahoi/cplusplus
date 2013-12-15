@@ -50,8 +50,10 @@ int main()
             if(key2 ==tab[i].second)
                j++;
              else
-             {if(i==(k-1))
-                 {flag=1;
+             {
+            	 if(i==(k-1))
+                 {
+            	 flag=1;
                   //i--;
                  }
               break;

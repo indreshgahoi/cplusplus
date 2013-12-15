@@ -27,10 +27,10 @@ int* FindMaxIndex(int *first ,int *last)
 {
 	int *mid ;
 	while(first <= last)
-	{
-		if(first==last)
+	{   // Base Case
+		if(first==last) // size 1
 	       return first ;
-		if((first+1)==last)
+		if((first+1)==last)  //size 2
 			return (*first) > (*last) ? first : last ;
 
 		mid = first + (last-first) / 2 ;

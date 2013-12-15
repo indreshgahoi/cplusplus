@@ -18,9 +18,9 @@ Given a Binary Tree, find the maximum sum path from a leaf to root. For example,
 
                   10
                /      \
-	     -2        7
+	         -2        7
            /   \
-	 8     -4
+	      8     -4
 
 Solution
 1) First find the leaf node that is on the maximum sum path. In the following code getTargetLeaf() does this by
