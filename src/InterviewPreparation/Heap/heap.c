@@ -11,7 +11,7 @@
 static void HeapIFY (Heap *heap ,size_t index);
 
 
-void HeapInit(Heap *heap , size_t capacity ,compare *cmp){
+void HeapInit(Heap *heap , size_t capacity ,compare_fn *cmp){
 
 	heap->capacity = capacity ;
 	heap->cmp = cmp ;

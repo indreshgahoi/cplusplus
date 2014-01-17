@@ -70,7 +70,7 @@ Question :-
 class Solution {
 public:
 
-	 vector<int> *vv ;
+	vector<int> *vv ;
 	struct Comparator
 	{
 
@@ -138,10 +138,10 @@ void driver()
   input.pop_back();
   cout<<"Solution "<<solver.twoSum(input,target);
 }
+
 /*
  input.txt 
  2 7 11 15 9
-
 */
 int main(){
 	driver();

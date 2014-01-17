@@ -10,7 +10,10 @@
 
 /*
  *  Question :-
- *  Given two Binary Search Trees(BST), print the elements of both BSTs in sorted form. The expected time complexity is O(m+n) where m is the number of nodes in first tree and n is the number of nodes in second tree. Maximum allowed auxiliary space is O(height of the first tree + height of the second tree).
+ *  Given two Binary Search Trees(BST), print the elements of both BSTs in sorted form.
+ *   The expected time complexity is O(m+n) where m is the number of nodes in first tree and
+ *   n is the number of nodes in second tree. Maximum allowed auxiliary space is
+ *   O(height of the first tree + height of the second tree).
 
 Examples:
 
@@ -56,6 +59,110 @@ The idea is to use iterative inorder traversal. We use two auxiliary stacks for 
   then we push it back to stack for the next iteration
  *
  */
+
+
+#include<iostream>
+#include<cstdio>
+#include<stack>
+
+using namespace std;
+struct TreeNode
+{
+	int val ;
+	TreeNode *left ;
+	TreeNode *right ;
+};
+
+
+class Solution
+{
+public:
+
+	void inorder(TreeNode* root)
+	{
+
+	}
+	void merge(TreeNode* root1 ,TreeNode *root2)
+	{
+
+		stack<TreeNode*> s1 , s2 ;
+		TreeNode *i , *j ;
+		i = root1 ;
+		j = root2 ;
+		while(i!=0 || j !=0 || !s1.empty() || !s2.empty())
+		{
+
+			if(i!=0 || j!=0)
+			{
+				if(i!=0)
+				{
+					s1.push(i) ;
+					i = i->left ;
+				}
+				if(j !=0 )
+				{
+					s2.push(j) ;
+					j = j->left ;
+				}
+			}
+			else
+			{
+				if(s1.empty())
+				{
+					while(!s2.empty())
+					{
+						j = s2.top();
+						s2.pop();
+						j->left = 0 ;
+						inorder(j);
+					}
+					return ;
+				}
+				if(s2.empty())
+				{
+					while(!s1.empty())
+					{
+						i = s1.top() ;
+						s1.pop() ;
+						i->left();
+						inorder(i) ;
+					}
+					return ;
+				}
+
+				if(s1.top()->val < s2.top()->val)
+				{
+					i = s1.top() ;
+					printf(" %d ",i->val) ;
+					s1.pop() ;
+					j = 0 ;
+					i = i ->right;
+				}
+				else
+				{
+					j = s2.top() ;
+					printf(" %d ",j->val) ;
+					s2.pop();
+					i = 0 ;
+					j = j->right ;
+				}
+			}
+		}
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

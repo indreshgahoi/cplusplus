@@ -71,7 +71,8 @@ int main()
         sort(n1+1,n1+n+1);
 
         X[0]=0;
-        FOR(i,1,n){
+        FOR(i,1,n)
+        {
          X[i]=1;
          FOR(j,1,i-1)
           {

@@ -57,6 +57,5 @@ void spiralTraversal(TreeNode *root){
         }
 	}
 
-
 }
 

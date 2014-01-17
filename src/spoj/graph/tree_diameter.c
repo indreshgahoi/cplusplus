@@ -35,6 +35,7 @@ struct Q
 {   I items[N+1];
     int front,end;
 };
+
 typedef struct Q *Queue ;
 
 int empty(Queue q)

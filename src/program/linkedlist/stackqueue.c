@@ -56,7 +56,8 @@ int dequeue(struct queue *q)
 		{
 			x=pop(&(q->stack1));
 			push(&(q->stack2),x);
-		}}
+		}
+	}
 	x=pop(&q->stack2);
 
 	return x;

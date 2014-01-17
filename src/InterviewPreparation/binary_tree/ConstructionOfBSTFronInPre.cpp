@@ -37,8 +37,8 @@ struct TreeNode* buildTreeFronInPre(int *pre , int *in , int inStart ,int inEnd)
    if(inStart == inEnd)
 	   return root ;
 
-   int IndexInInorder = search(in,st,end,root->val);
-   root->left = buildTreeFronInPre(pre,in,st,IndexInInorder-1);
+   int IndexInInorder = search(inStart,inEnd,end,root->val);
+   root->left = buildTreeFronInPre(pre,in,inStart,IndexInInorder-1);
    root->right = buildTreeFronInPre(pre,in,IndexInInorder+1,end);
  return root ;
 }

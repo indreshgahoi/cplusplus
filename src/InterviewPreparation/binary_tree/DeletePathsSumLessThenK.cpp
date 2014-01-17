@@ -51,6 +51,9 @@ Note: A node can be part of multiple paths. So we have to delete it only in case
 sum less than K.
   
   
+
+  http://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
+
 */
 
 class Solution
@@ -87,35 +90,27 @@ class Solution
 
 
  public :
-	TreeNode* deletePathsHavingSumLessThenKUtil(TreeNode* root ,int K)
+	TreeNode* deletePathsHavingSumLessThenKUtil(TreeNode* root ,int k , int &pathSum)
 	{
 		if(root==0)
 		{
 			return 0 ;
 		}
 
-		if(root->left==0 && root->right==0 )
-		{
-			if( (root->val)< K ){
-				delete root ;
-				return NULL ;
-			}
-			else
-				return root ;
+        int leftSum = pathSum + root->val;
+        int rightSum = leftSum ;
 
-		}
+		root->left = deletePathsHavingSumLessThenKUtil(root->left , k  ,leftSum);
+		root->right = deletePathsHavingSumLessThenKUtil(root->right , k , rightSum) ;
 
-
-		root->left = deletePathsHavingSumLessThenKUtil(root->left , K-root->val);
-		root->right = deletePathsHavingSumLessThenKUtil(root->right , K-root->val) ;
-
-		if(root->left==0 && root->right==0)
+		pathSum = max (leftSum,rightSum);
+		if(pathSum < k)
 		{
 			delete root ;
-			return 0 ;
+			return NULL ;
 		}
-		else
-			return root ;
+
+		return root ;
 
 	}
 
@@ -123,7 +118,8 @@ class Solution
    {
 	   vector<int> path;
 	   RootToLeafPath(root,path);
-	   root=deletePathsHavingSumLessThenKUtil(root,K);
+	   int sum = 0;
+	   root=deletePathsHavingSumLessThenKUtil(root,K,sum);
 	   path.clear();
 	   cout<<"Solution-----\n";
 	   RootToLeafPath(root,path);

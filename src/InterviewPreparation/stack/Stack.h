@@ -17,7 +17,7 @@ class Stack{
     void addAtBottom(int);
 public:
     int top;
-        int container[MAXSIZE];
+    int container[MAXSIZE];
     Stack();
     bool isFull();
     bool isEmpty();

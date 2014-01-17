@@ -14,7 +14,8 @@
 Iterating Over All Permutations of an Array
 
 Problem
-You have an array of objects supporting comparison, and you want to iterate through all possible permutations of these objects.
+You have an array of objects supporting comparison, and you want to iterate through all possible permutations
+of these objects.
 
 Solution
 Assuming that quite natural order of permutations is lexicographic order, you should be able to do just three things:
@@ -78,6 +79,34 @@ bool MyNextPermutation(vector<int> &a){
 	swap(a[i++],a[j--]);
  return true;
 }
+
+/*
+ * 3 2 4 3 1 to 3 3 1 2 4
+*/
+
+void nextPermutation(vector<int> &num) {
+
+       for(int i = num.size()-2 ; i >=0 ; --i)
+       {
+           if(num[i] < num[i+1])
+           {
+               for(int j = num.size()-1 ; j > i ; --j )
+               {
+                   if(num[i] < num[j])
+                   {
+                       swap(num[i],num[j]) ;
+                       reverse(num.begin()+i+1,num.end());
+                       return ;
+                   }
+               }
+           }
+       }
+       reverse(num.begin(),num.end());
+}
+
+
+
+
 
 #define p(v) {for(int i=0;i<v.size();i++)cout<<" "<<v[i];cout<<"\n";}
 

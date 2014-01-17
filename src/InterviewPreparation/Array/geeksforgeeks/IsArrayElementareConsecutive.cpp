@@ -139,6 +139,63 @@ bool isArrayConsecutive(vector<int> &A)
 }
 
 
+/* The function checks if the array elements are consecutive
+  If elements are consecutive, then returns true, else returns
+  false */
+bool areConsecutive(int arr[], int n)
+{
+
+    if ( n <  1 )
+        return false;
+    int max=arr[0] , min=arr[0] ;
+
+    	for(int i = 1 ; i < n ; ++i)
+    	{
+    		if(arr[i] < min)
+    		{
+    			min = arr[i];
+    		}
+    		else if(arr[i] > max)
+    		{
+    			max = arr[i] ;
+    		}
+    	}
+
+    /* 3) max – min + 1 is equal to n then only check all elements
+     * */
+
+    	if (max – min + 1 == n)
+    	{
+    		int i;
+    		for(i = 0; i < n; i++)
+    		{
+    			int j;
+
+    			if (arr[i] < 0)
+    				j = -arr[i] – min;
+    			else
+    				j = arr[i] – min;
+
+            // if the value at index j is negative then
+            // there is repitition
+    			if (arr[j] > 0)
+    				arr[j] = -arr[j];
+    			else
+    				return false;
+    		}
+
+        /* If we do not see a negative value then all elements
+           are distinct */
+    		return true;
+    }
+
+    return false; // if (max – min  + 1 != n)
+}
+
+
+
+
+
 void driver()
 {
 	vector<int> v ;

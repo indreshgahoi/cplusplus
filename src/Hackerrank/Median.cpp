@@ -69,16 +69,19 @@ typedef vector< pii > vpii;
 typedef long long ul;
 multiset<ul> maxheap,minheap;
 ul getMax(multiset<ul> &heap){
-	if(heap.size()>0){
-	multiset<ul>::reverse_iterator it=heap.rbegin();
-	return (*it);}
+	if(heap.size()>0)
+	{
+	 multiset<ul>::reverse_iterator it=heap.rbegin();
+	  return (*it);
+	}
 
 	return -MAX_INT;
 }
 ul getMin(multiset<ul> &heap){
 	if(heap.size()>0){
-	multiset<ul>::iterator it=heap.begin();
-	return (*it);}
+	 multiset<ul>::iterator it=heap.begin();
+	 return (*it);
+	}
 	return (MAX_INT);
 }
 bool isIn(multiset<ul> &mset,ul x){

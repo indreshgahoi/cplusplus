@@ -21,7 +21,8 @@ struct TreeNode {
 	int val ;
 	struct TreeNode *left ;
 	struct TreeNode *right ;
-	TreeNode(int x):val(x),left(NULL),right(NULL)
+	struct TreeNode *parent ;
+	TreeNode(int x):val(x),left(NULL),right(NULL),parent(NULL)
 	{
 
 	}
@@ -29,28 +30,70 @@ struct TreeNode {
 
 TreeNode* minimum(TreeNode *root) ;
 
-TreeNode* inOrderSuccessor(TreeNode *root , TreeNode *n)
+/*
+ *
+ *  Iterative Solution
+ *
+ */
+
+class Solution1
 {
-	if(n->right != NULL){
-		return minimum(n->right);
-	}
-	TreeNode *succ = NULL ;
-	while(root)
+
+
+public :
+
+	TreeNode* inOrderSuccessor(TreeNode *root , TreeNode *n)
 	{
-		if(n->val < root->val)
+		if(n->right != NULL)
 		{
-			succ = root ;
-			root = root->left ;
+			return minimum(n->right);
 		}
-		else if(n->val > root->val)
-		{
-			root = root->right ;
+
+		TreeNode *succ = NULL ;
+			while(root)
+			{
+				if(n->val < root->val)
+				{
+					succ = root ;
+					root = root->left ;
+				}
+				else if(n->val > root->val)
+				{
+					root = root->right ;
+				}
+				else
+					break ;
 		}
-		else
-			break ;
+		return succ ;
 	}
-	return succ ;
-}
 
+} ;
+/*
+ *
+ * Tree Having Parent Pointer
+ *
+ */
 
-
+class Solution2
+{
+public :
+ TreeNode* inOrderSuccessor(TreeNode *root , TreeNode *node)
+ {
+	 TreeNode *succ = NULL ;
+	 if(node->right != 0)
+	 {
+		 succ = minimum(node->right) ;
+	 }
+	 else
+	 {
+		 TreeNode *parent = node->parent ;
+		 while(parent != 0 && node==parent->right)
+		 {
+			 node = parent ;
+			 parent = parent->parent ;
+		 }
+		 succ = parent ;
+	 }
+	 return succ ;
+ }
+};

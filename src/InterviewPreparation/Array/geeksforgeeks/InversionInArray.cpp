@@ -62,7 +62,7 @@ Integer _mergeSort(Integer A[],Integer temp[],Integer left,Integer right){
 	  mid=(left+right)>>1;
 	  inv_count=_mergeSort(A,temp,left,mid);
 	  inv_count+=_mergeSort(A,temp,mid+1,right);
-      inv_count=+_merge(A,temp,left,mid,right);
+      inv_count+=_merge(A,temp,left,mid,right);
   }
  return inv_count;
 }

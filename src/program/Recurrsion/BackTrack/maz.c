@@ -33,12 +33,12 @@ void display_Board(int board[][col])
 
 int Solve(int board[][col],int qrow,int qcol)
 {
-	if ((qcol == col-1) && (qrow == col-1))
+	if ((qcol == col-1) && (qrow == col-1)) // base case
 	{
 		printf("path is:\n");
 		setboard(board, qrow, qcol);
 		return 1;
-	} // base case
+	}
 	else
 	{ // There are four possible wat to travel up, down, back ,forward but not cross
 		if (issafe(board, qrow, qcol)) {
@@ -92,8 +92,9 @@ void init_Board(int board[][col])
 	int i,j,k;
 	for(i=0;i<col;i++){
 		for(j=0;j<col;j++)
-		{scanf("%d",&k);
-		board[i][j]=k;
+		{
+			scanf("%d",&k);
+		    board[i][j]=k;
 		}
 
 	}

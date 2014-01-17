@@ -101,9 +101,9 @@ void test()
 	root->right = new TreeNode(14);
 	root->right->left = new TreeNode(13);
 	root->right->right = new TreeNode(15);
-	//root->left->left = new TreeNode(6);
-	//root->left->right = new TreeNode(8);
-	//root->left->left->right = new TreeNode(18);
+	root->left->left = new TreeNode(6);
+	root->left->right = new TreeNode(8);
+	root->left->left->right = new TreeNode(18);
 	Solution sl ;
 	if(sl.isLeafAtSameLevel(root))
 	{

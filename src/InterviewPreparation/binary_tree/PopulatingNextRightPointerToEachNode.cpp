@@ -46,11 +46,17 @@ struct TreeLinkNode {
  *
  * Do ii pre-order fashion
  */
+
+class Solution1{
+
+
+public :
 void connect1(TreeLinkNode *root) {
 	// Start typing your C/C++ solution below
 	// DO NOT write int main() function
 	if(!root)
 		return;
+
 
 	if(root->left && root->right) // node is non-leaf
 	{
@@ -63,21 +69,25 @@ void connect1(TreeLinkNode *root) {
 	connect1(root->left);
 	connect1(root->right);
 
-}
+ }
+};
+
 // Solution when it's any Binary Tree
-// when its complete bimary tree
-//it's not working'
+
+class Solution2{
+
+public :
 TreeLinkNode* getNext(TreeLinkNode* root){
 	TreeLinkNode	*current=root->next;
 	while(current)
 	{
-		if(current->left){
+		if(current->left)
+		{
 			return current->left;
-
 		}
-		if(current->right){
+		if(current->right)
+		{
 			return current->right;
-
 		}
 		current=current->next;
 	}
@@ -89,13 +99,19 @@ void connect(TreeLinkNode *root) {
 	// DO NOT write int main() function
 	if(!root)
 		return;
+	if(root->next !=NULL)
+	{
+    	  connect(root->next) ;
+	}
+
 	if(root->left)
 	{
 		if(root->right){
 			root->left->next=root->right;
 			root->right->next = getNext(root);
 		}
-		else{
+		else
+		{
 			root->left->next = getNext(root);
 		}
 		connect(root->left);
@@ -105,13 +121,14 @@ void connect(TreeLinkNode *root) {
 		root->right->next=getNext(root);
 		connect(root->right);
 	}
-	else{
+	else
+	{
 	 connect(getNext(root));
 	}
 }
 
 
-
+} ;
 
 
 /*
@@ -145,7 +162,7 @@ class Solution {
 
 
 
-class Solution1 {
+class Solution3 {
 	// that code work for all binary tree
 	void connect(TreeLinkNode *root)
 	{

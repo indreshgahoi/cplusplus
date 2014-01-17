@@ -93,11 +93,13 @@ class HashTable
 
 public :
   typedef HashTable::entry MapEntry ;
-	void set(_Key key , _Value value) {
+
+  void set(_Key key , _Value value) {
 		list<HashTable::entry*> &bucket = find_bucket(key) ;
 		HashTable::entry *old_entry = find_entry(bucket, key);
 	}
  private :
+
 	 HashTable::entry* find_entry(list<MapEntry*> &bucket , _Key &key)
 	  {
 	           list<MapEntry*>::const_iterator it = bucket.begin() ;
@@ -121,6 +123,7 @@ class Solution
 	public :
    
 };
+
 void driver()
 {
   fstream fin("input.txt");	

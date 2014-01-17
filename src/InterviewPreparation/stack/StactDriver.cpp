@@ -10,27 +10,27 @@
 #include "Stack.cpp"
 
 std::ostream& operator<<(std::ostream &out,const Stack &s){
-        out<<"[";
-        for(int i=0;i<s.top+1;i++)
-        	out<<" "<<s.container[i];
-        out<<"]"<<std::endl;
-    	return out;
+	out<<"[";
+	for(int i=0;i<s.top+1;i++)
+		out<<" "<<s.container[i];
+	out<<"]"<<std::endl;
+	return out;
 }
 
 void driver(){
 
-Stack myStack;
+	Stack myStack;
 
-myStack.push(1);
-myStack.push(4);
-myStack.push(3);
-myStack.push(6);
-myStack.push(8);
-myStack.push(5);
-cout<<myStack;
-myStack.reverse();
-cout<<"reverse Stack"<<endl;
-cout<<myStack;
+	myStack.push(1);
+	myStack.push(4);
+	myStack.push(3);
+	myStack.push(6);
+	myStack.push(8);
+	myStack.push(5);
+	cout<<myStack;
+	myStack.reverse();
+	cout<<"reverse Stack"<<endl;
+	cout<<myStack;
 }
 
 

@@ -12,6 +12,7 @@
 #include<stack>
 #include<algorithm>
 #include<vector>
+#include<cassert>
 using namespace std ;
 
 template<class T>
@@ -37,6 +38,11 @@ struct TreeNode {
 
 class Solution {
 public:
+
+	/*
+	 *  This Iterative Version is using two stack
+	 *
+	 */
 	vector<int> postorderTraversal(TreeNode *root) {
 
 		vector<int> res ;
@@ -65,7 +71,57 @@ public:
 		return res ;
 	}
 };
+typedef int ItemType ;
 
+
+
+
+
+
+class Solution1 {
+public:
+
+	/*
+	 *  This Iterative Version is using one Stack
+	 *
+	 */
+	vector<int> postorderTraversal(TreeNode *root) {
+
+			vector<int> traversalList ;
+			stack<TreeNode*> parentStack ;
+
+			do
+			{
+					while(root)
+					{
+						if(root->right)
+							parentStack.push(root->right) ;
+						parentStack.push(root) ;
+						root = root->left ;
+					}
+                    assert(root==0) ;
+					root = parentStack.top();
+					assert(root!=0) ;
+					parentStack.pop() ;
+					if(root->right &&  !parentStack.empty() && parentStack.top()==root->right)
+					{
+
+						parentStack.pop();
+						parentStack.push(root);
+						root = root->right ;
+					}
+					else
+					{
+						printf(" %d ",root->val) ;
+						traversalList.push_back(root->val) ;
+						root = 0 ;
+					}
+
+			}while(!parentStack.empty()) ;
+
+			return traversalList ;
+	}
+};
 
 void postOrderReverse(TreeNode *root , vector<int> &R)
 {
@@ -102,8 +158,8 @@ void test()
 	vector<int> res ;
 	postOrderReverse(root,res); reverse(res.begin(),res.end()) ; cout<<res<<"\n";
 	postOrder(root);cout<<"\n";
-	Solution sl ;
-	cout<<sl.postorderTraversal(root);
+	Solution1 sl ;
+	cout<<"\n "<<sl.postorderTraversal(root);
 }
 
 

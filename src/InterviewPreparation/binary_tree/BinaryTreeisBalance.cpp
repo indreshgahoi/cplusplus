@@ -29,8 +29,35 @@ int height(TreeNode *root){
 	int lh = height(root->left);
 }
 
-bool
 
+
+
+bool isBalancedhelp(TreeNode *root,int &h) {
+
+	if(!root)
+	{
+	  h=0;
+	  return true;
+	}
+    int l=0,r=0;
+
+    bool lb=isBalancedhelp(root->left,l);
+	bool rb=isBalancedhelp(root->right,r);
+
+	h=max(l,r)+1;
+
+	if(abs(l-r)<=1)
+	{
+		return lb&&rb;
+	}
+	else
+		return false ;
+ }
+ bool isBalanced(TreeNode *root) {
+  int h=0;
+   return isBalancedhelp(root,h);
+
+ }
 
 
 

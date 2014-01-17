@@ -68,6 +68,11 @@ void printList(ListNode *head){
 		head=head->next;
 	}
  }
+
+
+
+
+
 int main(){
 	ListNode *head=new ListNode(1);
 	ListNode *n2=new ListNode(2);

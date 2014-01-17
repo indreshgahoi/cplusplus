@@ -142,7 +142,6 @@ int MinCompare(heap_node a,heap_node b){
 
 int main(){
 	vector<heap_node> vec;
-
 	vec.push_back(heap_node(7));
 	vec.push_back(heap_node(8));
 	vec.push_back(heap_node(4));

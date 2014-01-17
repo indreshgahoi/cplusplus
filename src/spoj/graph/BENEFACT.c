@@ -76,6 +76,7 @@ struct node
 struct node *adj[N+1];
 char visit[N+1];
 I dist[N+1],n;
+
 void push_back(int i,int j,int d)
 {
     if(adj[i]==NULL)
@@ -103,6 +104,7 @@ int access(int i,int j)
     if(adj[i]==NULL)
       return 0;
     current=adj[i];
+
     while(current->next != NULL)
     {
         if(current->i==j)
@@ -129,6 +131,7 @@ I bfs(I start)
 
     insert(q,start);
     visit[start]=1;
+
     while(!empty(q))
     {
         tmp=pop(q);

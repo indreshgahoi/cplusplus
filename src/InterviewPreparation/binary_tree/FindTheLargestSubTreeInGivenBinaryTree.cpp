@@ -150,6 +150,11 @@ int LargestBstUtilOp(TreeNode *root ,int &min_valRef ,int &max_valRef ,bool &is_
 
 }
 
+
+
+
+
+
 int LargestBstOp(TreeNode *root)
 {
 	int min = INT_MAX ;
@@ -163,7 +168,61 @@ int LargestBstOp(TreeNode *root)
 }
 
 
+class Solution
+{
+public :
 
+	TreeNode* FindLargestBstUtil(TreeNode *tree , int &min , int &max , int &maxNodes , TreeNode *&largestBst)
+	{
+		if(!tree) return 0 ;
+
+		bool isBst = true ;
+
+		int leftSize = FindLargestBstUtil(tree->left,min,max,maxNodes,largestBst) ;
+
+		if( leftSize==-1 || (leftSize!=0 && tree->val <= max))
+		{
+			isBst = false ;
+		}
+		int currMin = (leftSize==0)? tree->val : min ;
+
+
+		int rightSize = FindLargestBstUtil(tree->right,min,max,maxNodes,largestBst) ;
+
+		if(rightSize==-1 || (rightSize!=0 && tree->val >= min))
+			isBst = false ;
+		int currMax = (rightSize==0) ? tree->val : max;
+
+		if(isBst)
+		{
+			min = currMin ;
+			max = currMax ;
+			int totalSize = leftSize + rightSize + 1 ;
+			if(totalSize > maxNodes)
+			{
+				maxNodes = totalSize ;
+				largestBst = root ;
+			}
+			return totalSize ;
+		}
+		else
+		{
+			return -1 ;
+		}
+	}
+
+
+
+	TreeNode* FindLargestBSTSubTree(TreeNode *root)
+	{
+            int min , max ;
+            TreeNode *largestBst = 0 ;
+            int MaxNodes = INT_MIN ;
+
+            FindLargestBstUtil(root,min,max,MaxNodes,largestBst) ;
+            return largestBst ;
+	}
+};
 
 
 

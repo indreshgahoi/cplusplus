@@ -39,7 +39,8 @@ int main()
       //pi(len)
       //printf("\n");
      FOR(i,1,len)
-     {   res[i]=(2*res[i-1])%m;
+     {
+    	 res[i]=(2*res[i-1])%m;
 
          if(pos[str[i]-'A'])
            res[i]=(res[i]-res[pos[str[i]-'A']-1]+m)%m;

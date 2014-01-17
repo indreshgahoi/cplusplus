@@ -41,8 +41,6 @@ int row;
  // it takes only O(n) extar space
  //
  int minimumTotalByDp(vector<vector<int> > &triangle) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
 
        vector<vector<int> > mem(2,vector<int>(triangle.size(),0));
        int m=999;

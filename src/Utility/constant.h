@@ -63,23 +63,33 @@ class Timer
 public:
 	Timer()
 	{
-		start = clock();
+		_ela = 0 ;
+		_start = clock();
 	}
 
 	long long int elapsed()
 	{
-		long long int ela = clock() -start ;
-		start = clock();
-		cout<<"elapsed time = "<<  ela/CLOCKS_PER_SEC;
-		return ela/CLOCKS_PER_SEC;
+		 _ela = clock() -_start ;
+		_start = clock();
+		cout<<"elapsed time = "<<  _ela/CLOCKS_PER_SEC;
+		return _ela/CLOCKS_PER_SEC;
+	}
+	void start()
+	{
+		_start = clock();
+	}
+	void stop()
+	{
+		 _ela = clock() -_start ;
 	}
 	void reset()
 	{
-		start = clock();
+		_start = clock();
 	}
 
 private :
- clock_t start ;
+ clock_t _start ;
+ long long int _ela ;
 };
 
 

@@ -33,12 +33,14 @@ int * prefix()
     int k=0;
 
     fore(i,2,len){
-       while(k>0 && s[k]!=s[i-1]){
-         k=prefix_fn[k];
-       }
 
-       if(s[k]==s[i-1]){
-        k++;
+    	while(k>0 && s[k]!=s[i-1]){
+    		k=prefix_fn[k];
+    	}
+
+       if(s[k]==s[i-1])
+       {
+    	   k++;
        }
 
        prefix_fn[i]=k;
