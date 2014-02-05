@@ -89,7 +89,6 @@ public:
 		int res , pre  ;
 		res=pre=A[0] ;
 		for(int i = 1 ; i < n ; ++i){
-
 			pre = max (pre+A[i],A[i]);
 			res = max(res,pre);
 		}
@@ -187,3 +186,79 @@ int maxSubarrayProduct(int arr[], int n)
 
 
 };
+
+
+
+
+class CircullarSubArray
+{
+
+public :
+	int Kadane(int A[] , int size)
+	{
+		int maxSum = A[0] ;
+		int start = 0 ;
+		int end = 0 ;
+		int localStart = 0 ;
+		int localSum = A[0] ;
+		for(int i = 1; i < size ;++i)
+		{
+			if(localSum < 0)
+			{
+				localSum = A[i] ;
+				localStart  = i ;
+			}
+			else
+			{
+				localSum +=A[i] ;
+			}
+			if(localSum > maxSum)
+			{
+				maxSum = localSum ;
+				start = localStart ;
+				end = i ;
+			}
+		}
+		return maxSum ;
+	}
+
+	int maxCircullarSum(int A[] , int n)
+	{
+		int maxSum = Kadane(A,n) ;
+
+		int totalSum = 0 ;
+
+		for(int i = 0 ; i < n ; ++i)
+		{
+			totalSum+=A[i] ;
+			A[i] = - A[i] ;
+		}
+
+		int BoundarySum = totalSum + Kadane(A,n) ;
+
+		return max(BoundarySum,maxSum) ;
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

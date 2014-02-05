@@ -1,9 +1,9 @@
 /*
- * ArrayConvert.cpp
+ * mergeSortedArray.cpp
  * run command
- * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/ArrayConvert.cpp -o /usr/build/Main.o
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/geeksforgeeks/mergeSortedArray.cpp -o /usr/build/Main.o
  *
- *  Created on: Dec 29, 2013
+ *  Created on: Jan 19, 2014
  *      Author: Indresh Gahoi
  */
 
@@ -31,7 +31,7 @@ using namespace std;
 #define debug(x) cout<<#x" "<<x;
 #define nl cout<<"\n";
 #define tab cout<<"		";
-
+void driver();
 void printArray(int A[],size_t size){
 	printf("values= [");
    for(int i=0;i<size-1;i++)
@@ -63,60 +63,37 @@ Question :-
   
   
 */
-class Solution
-{
-	public :
-   
+class Solution {
+public:
+    void merge(int A[], int m, int B[], int n) {
+
+            int i= m-1 ,j= n-1 , k=m+n-1  ;
+
+           while(i>=0  && j >= 0)
+           {
+               if(A[i]>B[j]) A[k] = A[i--] ;
+               else A[k]= B[j--] ;
+               k-- ;
+           }
+
+           while(j>=0)
+           {
+               A[k]=B[j--] ;
+               k-- ;
+           }
+    }
 };
-
-
-/*
- *
- *  Question :
- *  	Suppose we have an array a1, a2, ..., an, b1, b2, ..., bn. Implement an algorithm
-         to change this array to a1, b1, a2, b2, ..., an, bn.
- *  p =1                  q= 8
- *     a1 a2 a3 a4 b1 b2 b3 b4
- *  step 1
- *    1  2  3  4     5  6  7  8         r 1+8 / 2 4
- *   (a1 a2 b1 b2) (a3 a4 b3 b4)       i = (1+4)/2 = 2  r+1 4+8/2 6
- *
- *
- */
-
-void Rearrange(char *A ,int p , int q)
+void driver()
 {
-	if( p != q)
-	{
-
-		int r = (p+q) / 2 ;
-        int t = (r-p+1)/2 ;
-        Rearrange(A,p,r);
-        Rearrange(A,r+1,q);
-		for(int i = 1; i <= t ; ++i)
-		{
-
-			swap(A[p+t+i-1],A[r+i]) ;
-		}
-
-	}
+  fstream fin("input.txt");	
+  Solution solver ;
 }
-
-
-
-
 /*
  input.txt 
 
 */
 int main(){
-	char string[] = "a1b2c3b4" ;
-    //printArray(string,8);
-	puts(string) ;
-    Rearrange(string,0,7) ;
-    puts(string);
-   // printArray(A,8);
-
+	driver();
 	cout<<"\n";
 	return 0;
 }

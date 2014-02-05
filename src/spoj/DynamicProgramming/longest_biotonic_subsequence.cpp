@@ -25,7 +25,7 @@ int longest_biotonic_subsequence(vector<int> &array){
 		}
 	}
 
-	for(int i =array.size()-1;i>=0 ; --i){
+	for(int i =array.size()-2;i>=0 ; --i){
 		for(int j=array.size()-1;j>i; --j){
 			if(array[i]> array[j] && lds[i]< lds[j]+1)
 				lds[i]=lds[j]+1;

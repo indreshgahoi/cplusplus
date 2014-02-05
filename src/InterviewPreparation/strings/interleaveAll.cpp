@@ -1,9 +1,9 @@
 /*
- * ArrayConvert.cpp
+ * interleaveAll.cpp
  * run command
- * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/ArrayConvert.cpp -o /usr/build/Main.o
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/strings/interleaveAll.cpp -o /usr/build/Main.o
  *
- *  Created on: Dec 29, 2013
+ *  Created on: Jan 19, 2014
  *      Author: Indresh Gahoi
  */
 
@@ -31,7 +31,7 @@ using namespace std;
 #define debug(x) cout<<#x" "<<x;
 #define nl cout<<"\n";
 #define tab cout<<"		";
-
+void driver();
 void printArray(int A[],size_t size){
 	printf("values= [");
    for(int i=0;i<size-1;i++)
@@ -67,56 +67,57 @@ class Solution
 {
 	public :
    
-};
-
-
-/*
- *
- *  Question :
- *  	Suppose we have an array a1, a2, ..., an, b1, b2, ..., bn. Implement an algorithm
-         to change this array to a1, b1, a2, b2, ..., an, bn.
- *  p =1                  q= 8
- *     a1 a2 a3 a4 b1 b2 b3 b4
- *  step 1
- *    1  2  3  4     5  6  7  8         r 1+8 / 2 4
- *   (a1 a2 b1 b2) (a3 a4 b3 b4)       i = (1+4)/2 = 2  r+1 4+8/2 6
- *
- *
- */
-
-void Rearrange(char *A ,int p , int q)
-{
-	if( p != q)
+	int call ;
+	Solution():call(0){};
+	void printInterLeave(string &A,int ai,string &B ,int bi, vector<char> &C)
 	{
 
-		int r = (p+q) / 2 ;
-        int t = (r-p+1)/2 ;
-        Rearrange(A,p,r);
-        Rearrange(A,r+1,q);
-		for(int i = 1; i <= t ; ++i)
+		if(!(A.size()+B.size()-C.size()))
 		{
-
-			swap(A[p+t+i-1],A[r+i]) ;
+			cout<<C<<"\n" ;
+			return ;
 		}
-
+		call++ ;
+		if(ai<A.size())
+		{
+			C.push_back(A[ai]) ;
+			printInterLeave(A,ai+1,B,bi,C) ;
+			C.pop_back();
+		}
+		if(bi<B.size())
+		{
+			C.push_back(B[bi]) ;
+			printInterLeave(A,ai,B,bi+1,C) ;
+			C.pop_back() ;
+		}
 	}
+
+
+	void printAllInterLeave(string &A, string &B)
+	{
+		vector<char> C ;
+		printInterLeave(A,0,B,0,C) ;
+		printf("\n call = %d \n",call) ;
+	}
+};
+void driver()
+{
+  fstream fin("input.txt");	
+  Solution solver ;
+  string str1 ;
+  string str2 ;
+  fin>>str1 ;
+  fin>>str2 ;
+  cout<<str1 ;
+  cout<<str2 ;
+  solver.printAllInterLeave(str1,str2);
 }
-
-
-
-
 /*
  input.txt 
 
 */
 int main(){
-	char string[] = "a1b2c3b4" ;
-    //printArray(string,8);
-	puts(string) ;
-    Rearrange(string,0,7) ;
-    puts(string);
-   // printArray(A,8);
-
+	driver();
 	cout<<"\n";
 	return 0;
 }

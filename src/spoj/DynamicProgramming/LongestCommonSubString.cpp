@@ -1,9 +1,9 @@
 /*
- * ArrayConvert.cpp
+ * LongestCommonSubString.cpp
  * run command
- * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/ArrayConvert.cpp -o /usr/build/Main.o
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/spoj/DynamicProgramming/LongestCommonSubString.cpp -o /usr/build/Main.o
  *
- *  Created on: Dec 29, 2013
+ *  Created on: Jan 19, 2014
  *      Author: Indresh Gahoi
  */
 
@@ -31,18 +31,18 @@ using namespace std;
 #define debug(x) cout<<#x" "<<x;
 #define nl cout<<"\n";
 #define tab cout<<"		";
-
+void driver();
 void printArray(int A[],size_t size){
 	printf("values= [");
-   for(int i=0;i<size-1;i++)
-	   printf("%d ,",A[i]);
-   printf("%d]\n",A[size-1]);
+	for(int i=0;i<size-1;i++)
+		printf("%d ,",A[i]);
+	printf("%d]\n",A[size-1]);
 }
 template<class T>
 ostream& operator<<(ostream &out,const vector<T>& V){
 	out<<"[";
 	for(typename vector<T>::const_iterator it=V.begin();it!=V.end();it++){
-	 out<<" "<<*it;
+		out<<" "<<*it;
 	}
 	out<<"]"<<endl;
 	return out;
@@ -60,63 +60,56 @@ void getInput(vector<int> &v)
 /*
 Link :-  
 Question :-
-  
-  
-*/
+
+First find the longest common suffix for all pairs of prefixes of the strings. The longest common suffix is
+
+
+Longest Common Substring
+
+ First Find Out Longest Common Suffixes of string
+
+maintain Longest common Suffixes
+
+
+ */
 class Solution
 {
-	public :
-   
-};
+public :
 
-
-/*
- *
- *  Question :
- *  	Suppose we have an array a1, a2, ..., an, b1, b2, ..., bn. Implement an algorithm
-         to change this array to a1, b1, a2, b2, ..., an, bn.
- *  p =1                  q= 8
- *     a1 a2 a3 a4 b1 b2 b3 b4
- *  step 1
- *    1  2  3  4     5  6  7  8         r 1+8 / 2 4
- *   (a1 a2 b1 b2) (a3 a4 b3 b4)       i = (1+4)/2 = 2  r+1 4+8/2 6
- *
- *
- */
-
-void Rearrange(char *A ,int p , int q)
-{
-	if( p != q)
+	int  LongestCommonSubString(string &s1 , string &s2)
 	{
+		int l1 = s1.size() ;
+		int l2 = s2.size() ;
+		int result = 0 ;
 
-		int r = (p+q) / 2 ;
-        int t = (r-p+1)/2 ;
-        Rearrange(A,p,r);
-        Rearrange(A,r+1,q);
-		for(int i = 1; i <= t ; ++i)
-		{
-
-			swap(A[p+t+i-1],A[r+i]) ;
-		}
-
+		vector<vector<int> > dp(l1+1,vector<int>(l2+1,0)) ;
+		for(int i = 0 ; i<=l1 ;++i)
+			for(int j = 0 ; j <=l2 ; j++)
+			{
+				if(i==0 || j==0) dp[i][j] = 0 ;
+				if(s1[i-1]==s2[j-1])
+				{
+					dp[i][j] = 1+dp[i-1][j-1] ;
+					result = max(result,dp[i][j]);
+				}
+				else dp[i][i] = 0 ;
+			}
+		return result ;
 	}
+
+
+};
+void driver()
+{
+	fstream fin("input.txt");
+	Solution solver ;
 }
-
-
-
-
 /*
  input.txt 
 
-*/
+ */
 int main(){
-	char string[] = "a1b2c3b4" ;
-    //printArray(string,8);
-	puts(string) ;
-    Rearrange(string,0,7) ;
-    puts(string);
-   // printArray(A,8);
-
+	driver();
 	cout<<"\n";
 	return 0;
 }

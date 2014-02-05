@@ -32,7 +32,7 @@ struct nlist* install(char *name)
 {
 	struct nlist *np;
 	unsigned hashval;
-	if((np==lookup(name))==NULL)
+	if((np=lookup(name))==NULL)
 	{
 		np=(struct nlist*)malloc(sizeof(*np));
 	    if(np==NULL)

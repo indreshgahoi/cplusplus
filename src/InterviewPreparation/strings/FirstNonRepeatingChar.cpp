@@ -85,6 +85,7 @@ int NonRepeatingCharacter(char *str)
 		count[*s].frequency++;
 		if(count[*s].frequency==1)
 			count[*s].firstIdx = s-start;
+		s++ ;
 	}
 	int resultIdx = INT_MAX ;
 	for(int i = 0 ; i < NO_OF_CHAR ; ++i)

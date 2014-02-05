@@ -1,9 +1,9 @@
 /*
- * ArrayConvert.cpp
+ * twoStackInArray.cpp
  * run command
- * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/ArrayConvert.cpp -o /usr/build/Main.o
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/stack/twoStackInArray.cpp -o /usr/build/Main.o
  *
- *  Created on: Dec 29, 2013
+ *  Created on: Jan 21, 2014
  *      Author: Indresh Gahoi
  */
 
@@ -31,7 +31,7 @@ using namespace std;
 #define debug(x) cout<<#x" "<<x;
 #define nl cout<<"\n";
 #define tab cout<<"		";
-
+void driver();
 void printArray(int A[],size_t size){
 	printf("values= [");
    for(int i=0;i<size-1;i++)
@@ -63,60 +63,92 @@ Question :-
   
   
 */
-class Solution
+
+class TwoStack
 {
-	public :
-   
-};
-
-
-/*
- *
- *  Question :
- *  	Suppose we have an array a1, a2, ..., an, b1, b2, ..., bn. Implement an algorithm
-         to change this array to a1, b1, a2, b2, ..., an, bn.
- *  p =1                  q= 8
- *     a1 a2 a3 a4 b1 b2 b3 b4
- *  step 1
- *    1  2  3  4     5  6  7  8         r 1+8 / 2 4
- *   (a1 a2 b1 b2) (a3 a4 b3 b4)       i = (1+4)/2 = 2  r+1 4+8/2 6
- *
- *
- */
-
-void Rearrange(char *A ,int p , int q)
-{
-	if( p != q)
+private :
+	 int *data ;
+	 int top1 ;
+	 int top2 ;
+public :
+	TwoStack(int n)
 	{
+	    data = new int[n] ;
+	    top1 = -1 ;
+	    top2 = size ;
+	}
 
-		int r = (p+q) / 2 ;
-        int t = (r-p+1)/2 ;
-        Rearrange(A,p,r);
-        Rearrange(A,r+1,q);
-		for(int i = 1; i <= t ; ++i)
+	void push1(int x)
+	{
+		if(top1< top2-1)
 		{
+			top1++;
+			data[top1]=x ;
+		}
+		else
+		{
+			cerr<<"over flow" ;
+			exit(1);
+		}
+	}
+	void push(int x)
+	{
+		if(top1<top2-1)
+		{
+			top2--;
+			data[top2]=x ;
+		}
+		else
+		{
+			cerr<<"over flow" ;
+			exit(1);
+		}
+	}
 
-			swap(A[p+t+i-1],A[r+i]) ;
+	int pop1()
+	{
+		if(top1>=0)
+		{
+			int retVal = data[top1] ;
+			top1--;
+			return retVal ;
+		}
+		else
+		{
+			cerr<<"stack UnderFlow";
+			exit(1) ;
 		}
 
 	}
+	int pop2()
+	{
+		if(top2<size)
+		{
+			int retval = data[top2] ;
+			top2++ ;
+			return retval ;
+		}
+		else
+		{
+			cerr<<"Stack UnderFlow" ;
+			exit(1) ;
+		}
+	}
+};
+
+
+
+void driver()
+{
+  fstream fin("input.txt");	
+
 }
-
-
-
-
 /*
  input.txt 
 
 */
 int main(){
-	char string[] = "a1b2c3b4" ;
-    //printArray(string,8);
-	puts(string) ;
-    Rearrange(string,0,7) ;
-    puts(string);
-   // printArray(A,8);
-
+	driver();
 	cout<<"\n";
 	return 0;
 }

@@ -152,11 +152,6 @@ void testGraphRepresentation()
     std::cout<<g;
 }
 
-
-
-
-
-
 int main()
 {
  testGraphRepresentation();

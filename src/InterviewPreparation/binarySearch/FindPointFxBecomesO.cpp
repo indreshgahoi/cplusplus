@@ -44,6 +44,10 @@ int BinarySearch(int low , int high)
 	while(low <= high)
 	{
 		mid = low + (high-low)/2 ;
+		// If f(mid) is greater than 0 and one of the following two
+		        // conditions is true:
+		        // a) mid is equal to low
+		        // b) f(mid-1) is negative
 		if(F(mid)> 0 && (mid==low || F(mid-1)<= 0))
 			return mid ;
 		if(F(mid) <= 0)

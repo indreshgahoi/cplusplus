@@ -2,6 +2,7 @@
 should be :)
 algorithm here is used known as the Kadane's algorithm*/
 #include<stdio.h>
+
 int kadanesum(int arr[],int n,int *maxstart,int *maxend)
 {
 	int sum=0;

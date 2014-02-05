@@ -103,6 +103,71 @@ int subArraySum(int arr[], int n, int sum)
     return 0;
 }
 
+// o(n^2) Approach
+class Solution1
+{
+public :
+
+	bool subArraySum(int A[], int n , int targetSum)
+	{
+           int curr_sum ;
+
+           for(int i = 0 ; i<n;++i)
+           {
+        	   curr_sum = A[i] ;
+        	   for(int j=i+1;j<=n;++j)
+        	   {
+        		   if(curr_sum==targetSum)
+        		   {
+        			   printf("%d %d",i,j-1);
+        		   }
+
+        		   if(curr_sum > targetSum || j==n)
+        			   break ;
+        		   curr_sum +=A[j] ;
+        	   }
+           }
+           return 0 ;
+	}
+
+};
+
+// o(n) solution
+class Solution2
+{
+public :
+
+	bool subArraySum(int A[],int n,int targetSum)
+	{
+		int currSum = A[0] ;
+		int start = 0 ;
+		for(int i = 1; i <=n ;++i)
+		{
+			if(currSum>targetSum && start<i-1)
+			{
+				currSum-=A[start] ;
+				start++ ;
+			}
+
+			if(currSum==targetSum)
+			{
+				printf(" %d %d ",start,i-1);
+				return 1 ;
+			}
+			if(i<n)
+				currSum+=A[i] ;
+
+		}
+		return 0 ;
+	}
+};
+
+
+
+
+
+
+
 void driver()
 {
   fstream fin("input.txt");	

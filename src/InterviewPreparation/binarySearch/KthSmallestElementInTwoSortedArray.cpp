@@ -18,20 +18,28 @@ int KthSmallestElementInTwoSortedArray(vector<int> A, vector<int> B,int k){
 	int res;
 	int i=0,j=0,step=0;
 	while(true){
-		if(  i<A.size() && A[i]<B[j]){
-			step++;i++;}
-		else if( j<B.size() && A[i]>B[j] ){
-			step++;j++;}
-		else{
+		if(  i<A.size() && A[i]<B[j])
+		{
+			step++;
+			i++;
+		}
+		else if( j<B.size() && A[i]>B[j] )
+		{
+			step++;
+			j++;
+		}
+		else
+		{
 			if(i<A.size())
 			i++;
 			if(j<B.size())
 			j++;
 			step++;
 		}
-		if(step==(k-1)){
+		if(step==(k-1))
+		{
 			res=A[i]<B[j]?A[i]:B[j];
-		 break;
+		     break;
 		}
 	}
 return res;
@@ -49,7 +57,8 @@ return res;
  */
 
 
-int kthSmallestElementIntwosortedArray2(int A[],int m,int B[],int n,int k){
+int kthSmallestElementIntwosortedArray2(int A[],int m,int B[],int n,int k)
+{
 	int i=(int)(((double)(m))/(m+n)*(k-1));
 	int j=(k-1)-i;
 

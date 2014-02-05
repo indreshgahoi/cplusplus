@@ -63,6 +63,9 @@ Question :-
   
   
 */
+class Solution
+{
+
 int findSubArray(int arr[], int n)
 {
     int maxsize = -1, startindex;  // variables to store result values
@@ -128,13 +131,88 @@ int findSubArray(int arr[], int n)
     return maxsize;
 }
 
+};
 
-
-
-class Solution
+// o(n^2) solution
+class Solution1
 {
 	public :
+
+	int largestSubArrySum(int A[],int n)
+	{
+	 int maxSize = 0 , startIdx = -1 ;
+	 int count = 0 ;
+	 for(int i = 0 ; i<n-1;++i)
+	 {
+		 count = A[i]==0 ? 1 : -1 ;
+		 for(int j=i+1 ;j<n;++j)
+		 {
+			 A[i]==0 ? count+=1 :count-=1;
+
+			 if(count==0 && maxSize < (j-i+1))
+			 {
+				 maxSize = j-i+1 ;
+				 startIdx = i ;
+			 }
+		 }
+	 }
+	 return maxSize ;
+	}
    
+};
+
+class Solution2
+{
+public :
+	int largestmaxSubArrayWithSum(int A[],int n)
+	{
+		int maxSize = 0 ;
+		int startIdx = -1;
+		int preFixSum[n] ;
+		preFixSum[0] = A[0]==0 ? 1 :-1;
+		int max = A[0],min = A[0] ;
+		for(int i = 1 ; i<n;++i)
+		{
+			preFixSum[i]=preFixSum[i-1] +(A[i]==0)?1:-1 ;
+	        if(max<preFixSum[i])
+	        {
+	        	max=preFixSum[i];
+	        }
+	        if(min>preFixSum[i])
+	        {
+	        	min = preFixSum[i] ;
+	        }
+		}
+
+		int sumHash[max-min+1] ;
+
+		for(int i=0 ;i<max-min+1;++i)
+		{
+			sumHash[i] = -1 ;
+		}
+
+		for(int i = 0 ; i<n ; ++i)
+		{
+			if(preFixSum[i]==0 )
+			{
+				maxSize = i+1 ;
+				startIdx = 0 ;
+			}
+			if(sumHash[preFixSum[i]-min]==-1)
+			{
+				sumHash[preFixSum[i]-min] = i ;
+			}
+			else
+			{
+				if(i-sumHash[preFixSum[i]-min]>maxSize)
+				{
+					maxSize = i-sumHash[preFixSum[i]-min] ;
+					startIdx= i+1 ;
+				}
+			}
+		}
+		return maxSize ;
+	}
 };
 void driver()
 {

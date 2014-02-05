@@ -1,9 +1,9 @@
 /*
- * ArrayConvert.cpp
+ * AVLTree.cpp
  * run command
- * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/ArrayConvert.cpp -o /usr/build/Main.o
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/spoj/DataStructure/BalanceTree/AVLTree.cpp -o /usr/build/Main.o
  *
- *  Created on: Dec 29, 2013
+ *  Created on: Jan 26, 2014
  *      Author: Indresh Gahoi
  */
 
@@ -57,52 +57,33 @@ void getInput(vector<int> &v)
 		v.push_back(arr[iter]);
 	}
 }
-/*
-Link :-  
-Question :-
-  
-  
-*/
-class Solution
+
+
+typedef int KeyType ;
+
+struct TreeNode
 {
-	public :
-   
+	KeyType key ;
+	size_t height ;
+	size_t size ;
+	TreeNode *left,*right ;
+	TreeNode(KeyType key_):key(key_),left(0),right(0){ height = 0 ;size=0;}
 };
 
 
-/*
- *
- *  Question :
- *  	Suppose we have an array a1, a2, ..., an, b1, b2, ..., bn. Implement an algorithm
-         to change this array to a1, b1, a2, b2, ..., an, bn.
- *  p =1                  q= 8
- *     a1 a2 a3 a4 b1 b2 b3 b4
- *  step 1
- *    1  2  3  4     5  6  7  8         r 1+8 / 2 4
- *   (a1 a2 b1 b2) (a3 a4 b3 b4)       i = (1+4)/2 = 2  r+1 4+8/2 6
- *
- *
- */
-
-void Rearrange(char *A ,int p , int q)
+class AVLTree
 {
-	if( p != q)
-	{
 
-		int r = (p+q) / 2 ;
-        int t = (r-p+1)/2 ;
-        Rearrange(A,p,r);
-        Rearrange(A,r+1,q);
-		for(int i = 1; i <= t ; ++i)
-		{
-
-			swap(A[p+t+i-1],A[r+i]) ;
-		}
-
-	}
-}
-
-
+	void leftRotate(TreeNode *n);
+	void rightRotate(TreeNode *n) ;
+public :
+	AVLTree(){root=0;}
+	void insert(TreeNode *node);
+	TreeNode* find(KeyType key) ;
+	void erase(KeyType key);
+private :
+	TreeNode *root;
+};
 
 
 /*
@@ -110,13 +91,5 @@ void Rearrange(char *A ,int p , int q)
 
 */
 int main(){
-	char string[] = "a1b2c3b4" ;
-    //printArray(string,8);
-	puts(string) ;
-    Rearrange(string,0,7) ;
-    puts(string);
-   // printArray(A,8);
-
-	cout<<"\n";
 	return 0;
 }

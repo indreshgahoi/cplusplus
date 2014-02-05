@@ -114,7 +114,7 @@ int MinMumDistance(vector<int> V, int x , int y)
 	  }
   }
   int minDist = 10e9 ;
-  for( ; i < size() ; ++i)
+  for( ; i < size ; ++i)
   {
 	  if((V[i]==x || V[i]==y))
 	  {
@@ -127,6 +127,38 @@ int MinMumDistance(vector<int> V, int x , int y)
  return minDist ;
 }
 
+
+
+class Solution
+{
+public:
+	int minDst(vector<int> &numList ,int x,int y)
+	{
+		int size = numList.size() ;
+		int pre , i ;
+		int minDist = INT_MAX ;
+		for(i=0;i<size;++i)
+		{
+			if(numList[i]==x || numList[i]==y)
+			{
+				pre = i ;
+				break ;
+			}
+		}
+		for(;i<size;++i)
+		{
+			if(numList[i]==x || numList==y)
+			{
+				if(numList[pre]!=numList[i] && i-pre<minDist)
+				{
+					minDist = i-pre ;
+				}
+				pre= i ;
+			}
+		}
+		return minDst ;
+	}
+};
 
 
 int main(){

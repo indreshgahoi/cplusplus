@@ -113,6 +113,43 @@ int bitonic(int arr[], int n)
     return max;
 }
 
+class Solution1
+{
+
+public :
+	int maxLengthBioTanicSubArray(vector<int> &numList)
+	{
+		int size= numList.size();
+		vector<int> incSeq(size,1);
+		vector<int> decSeq(size,1);
+
+		for(int i = 1; i<size;++i)
+		{
+			if(numList[i-1]<numList[i])
+				incSeq[i]=incSeq[i-1]+1 ;
+		}
+		for(int i=size-2;i>=0;--i)
+		{
+			if(numList[i]>numList[i+1])
+				decSeq[i]=decSeq[i+1]+1;
+		}
+		int maxLen = incSeq[0]+decSeq[0]-1;
+
+		for(int i = 1 ;i<size;++i)
+		{
+			if((incSeq[i]+decSeq[i]-1)>maxLen)
+			{
+				maxLen = incSeq[i]+decSeq[i]-1 ;
+			}
+		}
+		return maxLen ;
+	}
+};
+
+
+
+
+
 
 void driver()
 {

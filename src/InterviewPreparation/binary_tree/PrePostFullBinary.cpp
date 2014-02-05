@@ -157,13 +157,13 @@ class Solution
 			if(post[postIndex]==pre[preStart])
 				break ;
 		}
-		printf("\nRoot : %d",root->key);
-		printf("\nLeft : ") ;
-		for( int iter = low ; iter <n && iter <= postIndex ; ++iter)
-			printf("%d ",post[iter]) ;
-		printf("\nRight : ") ;
-		for( int iter = postIndex+1 ; iter<n && iter <high ; ++iter)
-			printf("%d ",post[iter]) ;
+//		printf("\nRoot : %d",root->key);
+//		printf("\nLeft : ") ;
+//		for( int iter = low ; iter <n && iter <= postIndex ; ++iter)
+//			printf("%d ",post[iter]) ;
+//		printf("\nRight : ") ;
+//		for( int iter = postIndex+1 ; iter<n && iter <high ; ++iter)
+//			printf("%d ",post[iter]) ;
 
 		root->left = ConstructBinaryTreeUtil(pre,preStart,post,low,postIndex-1,n);
 		root->right = ConstructBinaryTreeUtil(pre,preStart,post,postIndex+1,high,n) ;

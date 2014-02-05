@@ -1,9 +1,9 @@
 /*
- * ArrayConvert.cpp
+ * TreeIsoMorphic.cpp
  * run command
- * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/Array/ArrayConvert.cpp -o /usr/build/Main.o
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/binary_tree/TreeIsoMorphic.cpp -o /usr/build/Main.o
  *
- *  Created on: Dec 29, 2013
+ *  Created on: Feb 4, 2014
  *      Author: Indresh Gahoi
  */
 
@@ -31,7 +31,7 @@ using namespace std;
 #define debug(x) cout<<#x" "<<x;
 #define nl cout<<"\n";
 #define tab cout<<"		";
-
+void driver();
 void printArray(int A[],size_t size){
 	printf("values= [");
    for(int i=0;i<size-1;i++)
@@ -58,65 +58,49 @@ void getInput(vector<int> &v)
 	}
 }
 /*
-Link :-  
+Link :-  http://www.geeksforgeeks.org/tree-isomorphism-problem/
 Question :-
   
+ Two Tree are iso morphic
+ if one of them is obtained from other by a series of flip
   
 */
-class Solution
+
+typedef int KeyType ;
+
+struct TreeNode
 {
-	public :
-   
+	TreeNode *left , *right ;
+	KeyType val ;
 };
 
 
-/*
- *
- *  Question :
- *  	Suppose we have an array a1, a2, ..., an, b1, b2, ..., bn. Implement an algorithm
-         to change this array to a1, b1, a2, b2, ..., an, bn.
- *  p =1                  q= 8
- *     a1 a2 a3 a4 b1 b2 b3 b4
- *  step 1
- *    1  2  3  4     5  6  7  8         r 1+8 / 2 4
- *   (a1 a2 b1 b2) (a3 a4 b3 b4)       i = (1+4)/2 = 2  r+1 4+8/2 6
- *
- *
- */
-
-void Rearrange(char *A ,int p , int q)
+class Solution
 {
-	if( p != q)
+	public :
+
+	bool isISoMorphic(TreeNode* t1 , TreeNode *t2)
 	{
+		if(t1==0 && t2==0) return true ;
 
-		int r = (p+q) / 2 ;
-        int t = (r-p+1)/2 ;
-        Rearrange(A,p,r);
-        Rearrange(A,r+1,q);
-		for(int i = 1; i <= t ; ++i)
-		{
+		if(t1==0 || t1==0 || t1->val != t1->val) return false ;
 
-			swap(A[p+t+i-1],A[r+i]) ;
-		}
-
+	 return ( isISoMorphic(t1->left,t1->left) && isISoMorphic(t1->right,t2->right))
+			 ||(isISoMorphic(t1->left,t2->right)&& isISoMorphic(t1->right,t2->left)) ;
 	}
+   
+};
+void driver()
+{
+  fstream fin("input.txt");	
+  Solution solver ;
 }
-
-
-
-
 /*
  input.txt 
 
 */
 int main(){
-	char string[] = "a1b2c3b4" ;
-    //printArray(string,8);
-	puts(string) ;
-    Rearrange(string,0,7) ;
-    puts(string);
-   // printArray(A,8);
-
+	driver();
 	cout<<"\n";
 	return 0;
 }

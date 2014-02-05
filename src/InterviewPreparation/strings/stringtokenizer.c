@@ -112,8 +112,6 @@ const char * nextToken(struct StringTokenizer *tokenizer)
  do{
     ret=tokenizer->position;
     tokenizer->position+=strlen(tokenizer->position)+1;
-
-
     if(tokenizer->position>=tokenizer->end){
     	tokenizer->position=0;
     	break;

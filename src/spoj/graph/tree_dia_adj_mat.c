@@ -78,26 +78,24 @@ I pop(Queue q)
 
 I bfs(I start)
 {
-   /* Queue q;
-    q=(struct Q*)malloc(sizeof(struct Q));
-    q->front=q->end=n;*/
-    queue<int> myqueue;
+   Queue myqueue;
+   myqueue=(struct Q*)malloc(sizeof(struct Q));
+   myqueue->front=myqueue->end=n;
     I tmp,i;
     memset(dist,0,sizeof(int)*(n+1));
     memset(visit,0,sizeof(int)*(n+1));
-    //mcl(visit);
-    myqueue.insert(start);
+    insert(myqueue,start);
     visit[start]=1;
-    while(!myqueue.empty())
+    while(!empty(myqueue))
     {
         tmp= myqueue.front();
-        myqueue.pop();
+        pop(myqueue);
         FOR(i,1,n)
           if(tmp!=i && adj[tmp][i] && visit[i]==0)
           {
               dist[i]=dist[tmp]+1;
               visit[i]=1;
-              myqueue.insert(i);
+              insert(myqueue,i);
           }
 
     }
@@ -111,7 +109,7 @@ I bfs(I start)
 int main()
 {
    I p,q,i,root,res,ans;
-   //adj=(char**)malloc(sizeof(char)*(N+1)*(N+1));
+   adj=(char**)malloc(sizeof(char)*(N+1)*(N+1));
    memset(adj,0,sizeof(char)*(n+1)*(n+1));
        gi(n);
 

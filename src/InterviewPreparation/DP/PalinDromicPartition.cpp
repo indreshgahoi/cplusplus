@@ -130,11 +130,9 @@ class Solution
 		{
 			for(j=1 ; j< size ;++j)
 			{
-
 				if(str[i]==str[j] && ((i+1)==j || isPalindrome[i+1][j-1]))
 				{
 						isPalindrome[i][j] = true ;
-
 				}
 				if(isPalindrome[i][size-1])
 				{
@@ -144,9 +142,7 @@ class Solution
 				else if(isPalindrome[i][j])
 				{
 					DP[i] = min(DP[i],1+DP[j+1]);
-
 				}
-
                cout<<DP ;
 			}
 		}

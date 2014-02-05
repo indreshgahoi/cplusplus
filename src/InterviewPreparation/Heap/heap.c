@@ -57,7 +57,7 @@ void HeapInsert(Heap *heap , void *dataPtr){
 	heap[now] = dataPtr ;
 }
 
-void * HeapDelete( Heap *heap ){
+void* HeapDelete( Heap *heap ){
 
 	void *lastDataPtr , *topDataPtr ;
 

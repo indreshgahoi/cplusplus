@@ -5,6 +5,7 @@ struct node
 	void *points;
 	struct node *next;
 }*top=NULL;
+
 void push(void *p)
 {
 	struct node *temp=(struct node*)malloc(sizeof(struct node));

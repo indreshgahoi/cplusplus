@@ -69,40 +69,41 @@ typedef pair<int, int > pii;
 typedef vector< pii > vpii;
 
 int GCD(int a,int b){
-int r;
-if(a<0) a=-a;
-if(b<0) b=-b;
-while(a){r=b; b=a; a=r%a;}
-return b;
+	int r;
+	if(a<0) a=-a;
+	if(b<0) b=-b;
+	while(a){r=b; b=a; a=r%a;}
+	return b;
 }
 LL inv[1010000];
 LL fact[1010000], factinv[1010000];
 
 
-LL comb(int a, int b){
-assert(a <= 1000000);
-if(a<b)
-	return 0;
-return (((fact[a] * factinv[b])%mod) * factinv[a-b])%mod;
+LL comb(int a, int b)
+{
+	assert(a <= 1000000);
+	if(a<b)
+		return 0;
+	return (((fact[a] * factinv[b])%mod) * factinv[a-b])%mod;
 }
 void preprocess(){
-	 inv[1] = 1;
+	inv[1] = 1;
 	FOR(i,2,1010000) inv[i] = ((mod- mod/i) * inv[mod%i])%mod;
 	fact[0] = factinv[0] = 1;
 	FOR(i,1,1010000){
-	fact[i] = (fact[i-1] * i) % mod;
-	factinv[i] = (factinv[i-1] * inv[i]) % mod;
+		fact[i] = (fact[i-1] * i) % mod;
+		factinv[i] = (factinv[i-1] * inv[i]) % mod;
 	}
 }
 LL solve(map<LL,LL> &m,LL N,LL K){
 	LL sum=0;
 	for(map<LL,LL>::reverse_iterator it=m.rbegin();it!=m.rend();it++){
 		LL f=it->first,s=it->second;
-	//	cout<<"f "<<f<<s<<endl;
+		//	cout<<"f "<<f<<s<<endl;
 		while(s--){
 			N--;
 			sum=((sum%mod)+((f%mod)*(comb(N,K-1)%mod))%mod)%mod;
-          // cout<<" sum ="<<sum<<endl;
+			// cout<<" sum ="<<sum<<endl;
 		}
 
 	}
@@ -110,26 +111,26 @@ LL solve(map<LL,LL> &m,LL N,LL K){
 }
 int main(){
 	freopen("input.txt","rt",stdin);
-		freopen("output.out","wt",stdout);
-		int T;
-		preprocess();
-		cin>>T;
+	freopen("output.out","wt",stdout);
+	int T;
+	preprocess();
+	cin>>T;
 	for(int i=1;i<=T;i++){
-	int N,K;
-	cin>>N>>K;
-	LL n;
-	map<LL,LL> m;
+		int N,K;
+		cin>>N>>K;
+		LL n;
+		map<LL,LL> m;
 
-	REP(j,N)
-	{
-		cin>>n;
-		if(m[n]==0)
-			m[n]=1;
-		else
-			m[n]++;
+		REP(j,N)
+		{
+			cin>>n;
+			if(m[n]==0)
+				m[n]=1;
+			else
+				m[n]++;
 
-	}
-	cout<<"Case #"<<i<<": "<<solve(m,N,K)<<endl;
+		}
+		cout<<"Case #"<<i<<": "<<solve(m,N,K)<<endl;
 	}
 	return 0;
 }

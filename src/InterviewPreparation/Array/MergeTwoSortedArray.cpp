@@ -18,7 +18,8 @@ using namespace std;
 	  A[total]=A[m];
 	  m--;
 	 }
-	 else{
+	 else
+	 {
 		 A[total]=B[n];
 		 n--;
 	 }

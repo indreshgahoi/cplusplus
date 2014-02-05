@@ -4,10 +4,10 @@
 
 using namespace std;
 
-int x,y,z;
-vector<int> num;
+
 int threeClosetSum(vector<int> &num, int S)
 {
+	int x,y,z;
 
  int min=999999;
  int size=num.size();
@@ -18,14 +18,21 @@ int threeClosetSum(vector<int> &num, int S)
      int low=i+1;
      int high=size-1;
      while(low<high)
-     {    int a=num[low]+num[high]+num[i];
-         if(a==S){
+     {
+    	 int a=num[low]+num[high]+num[i];
+         if(a==S)
+         {
          x=i,y=low,z=high;
-        return a; }
+         return a;
+         }
          if(abs(a-S)<min)
+         {
           x=i,y=low,z=high,min=abs(a-S);
+         }
          if(a<S)
+         {
           low++;
+         }
          else
            high--;
 
