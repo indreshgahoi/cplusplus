@@ -58,7 +58,8 @@ int MaximumPossibleStack(vector<slab> &V){
    sort(V.begin(),V.end(),compare);
    cout<<V<<std::endl;
     int i , j ;
-    for(vector<slab>::iterator it = V.begin() ,i=0 ; it != V.end() ; ++i,++it){
+    for(vector<slab>::iterator it = V.begin() ,i=0 ; it != V.end() ; ++i,++it)
+    {
       res[i] = 0 ; j = 0;
       for(vector<slab>::iterator jt = V.begin() ; jt < it ;++j, ++jt){
            if(it->width > jt->width && res[j]+it->width > res[i]){

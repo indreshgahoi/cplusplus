@@ -19,9 +19,11 @@
 
 
 using namespace std ;
-class Dictionary{
+class Dictionary
+{
 	int noOfChildres;
-	struct node{
+	struct node
+	{
 		bool isEnd ;
 		struct node* child[256];
 	};

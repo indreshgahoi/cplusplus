@@ -56,7 +56,8 @@ void getInput(vector<int> &v)
 	}
 }
 /*
-Link :-  http://www.geeksforgeeks.org/dynamic-programming-set-17-palindrome-partitioning/
+Link :-
+http://www.geeksforgeeks.org/dynamic-programming-set-17-palindrome-partitioning/
 Question :-
 	Given a string, a partitioning of the string is a palindrome partitioning if
 	every substring of the partition is a palindrome.

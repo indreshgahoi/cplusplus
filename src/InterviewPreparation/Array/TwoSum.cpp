@@ -129,8 +129,7 @@ void driver()
   fstream fin("input.txt");	
   vector<int> input ;
   int x ;
-  while(fin>>x)
-  {
+  while(fin>>x) {
 	  input.push_back(x);
   }
   Solution solver ;

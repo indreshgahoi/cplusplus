@@ -33,8 +33,6 @@ int n;
   printf("%d\n",steps);
 
 
-
-
     //up phase
 
    for(int i=0;i<d-1;i++){

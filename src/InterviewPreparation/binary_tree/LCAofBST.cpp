@@ -42,7 +42,8 @@ struct node *LCARecur(struct node *root , int n1 , int n2){
 
 struct node *LCAIterative(struct node *root , int n1 , int n2){
 
-   while(root){
+   while(root)
+   {
 	 if(root->val > n1 && root->val > n2){
 		 root = root->right ;
 	 }

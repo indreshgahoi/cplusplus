@@ -41,7 +41,7 @@ bool search(int A[], int n, int target) {
 
 class Solution
 {
-	bool search(int A[] , int n , int key)
+	int search(int A[] , int n , int key)
 	{
 		int m , l , r ;
 		l = 0 , r= n-1;
@@ -79,7 +79,7 @@ class Solution
 				l++ ;
 			}
 		}
-		return false ;
+		return -1 ;
 	}
 };
 

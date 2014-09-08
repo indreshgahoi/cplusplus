@@ -73,11 +73,18 @@ struct paraenthesis_pair
 class Solution
 {
 	public :
+	vector<string> result ;
     void _all_combination(int noOfPair ,int open_no , int close_no ,vector<char> &comb , paraenthesis_pair &par)
     {
     	if(close_no==noOfPair)
     	{
-    		cout<<" "<<comb ;
+    		//cout<<" "<<comb ;
+    		 string str ;
+    		    	    for(int i = 0 ; i < comb.size() ; ++i){
+    		    	        str.push_back(comb[i]);
+    		    	    }
+    		    		result.push_back(str);
+    		    		return ;
     		return ;
     	}
         // two possibilities open or close
@@ -99,6 +106,16 @@ class Solution
 	  vector<char> comb ;
      _all_combination(noOfPair,0,0,comb,par_pair) ;
 	}
+
+	vector<string> generateParenthesis(int n) {
+		paraenthesis_pair  par ;
+		  par.open =  '(' ;
+		  par.close = ')' ;
+		  result.clear();
+		  allCombinationParanethesis(n,par);
+		  return result;
+	}
+
 };
 void driver()
 {

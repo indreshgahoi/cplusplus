@@ -66,6 +66,7 @@ int kthSmallestElementIntwosortedArray2(int A[],int m,int B[],int n,int k)
 	int Bj=(j==n)?INT_MAX:B[j];
 	int Ai_1=(i==0)?INT_MIN:A[i-1];
 	int Bj_1=(j==0)?INT_MIN:B[j-1];
+
 	if(Ai<Bj && Ai>Bj_1)
 		return Ai;
 	if(Bj>Ai && Bj>Ai_1)

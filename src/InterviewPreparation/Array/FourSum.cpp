@@ -32,57 +32,49 @@ using namespace std;
 #define nl cout<<"\n";
 #define tab cout<<"		";
 void driver();
-void printArray(int A[],size_t size){
+void printArray(int A[], size_t size) {
 	printf("values= [");
-   for(int i=0;i<size-1;i++)
-	   printf("%d ,",A[i]);
-   printf("%d]\n",A[size-1]);
+	for (int i = 0; i < size - 1; i++)
+		printf("%d ,", A[i]);
+	printf("%d]\n", A[size - 1]);
 }
 template<class T>
-ostream& operator<<(ostream &out,const vector<T>& V){
-	out<<"[";
-	for(typename vector<T>::const_iterator it=V.begin();it!=V.end();it++){
-	 out<<" "<<*it;
+ostream& operator<<(ostream &out, const vector<T>& V) {
+	out << "[";
+	for (typename vector<T>::const_iterator it = V.begin(); it != V.end();
+			it++) {
+		out << " " << *it;
 	}
-	out<<"]"<<endl;
+	out << "]" << endl;
 	return out;
 }
-void getInput(vector<int> &v)
-{
+void getInput(vector<int> &v) {
 #define ARRAYSIZE(A) sizeof(A)/sizeof(A[0])
-	int arr[] = {-1,-1,-1,1,1};
-	int size = ARRAYSIZE(arr) ;
-	for(int iter = 0 ; iter < size ; ++iter)
-	{
+	int arr[] = { -1, -1, -1, 1, 1 };
+	int size = ARRAYSIZE(arr);
+	for (int iter = 0; iter < size; ++iter) {
 		v.push_back(arr[iter]);
 	}
 }
 /*
-Link :-  
-Question :-
-  
-  
-*/
+ Link :-
+ Question :-
+
+
+ */
 
 // O((n^4)
-class Solution
-{
-	public :
-   
-	void FourSum(int A[] , int n , int targetSum)
-	{
+class Solution {
+public:
 
-		for(i = 0 ; i<n-3 ; ++i)
-		{
-			for(int j = i+1 ; j < n-2 ;++j)
-			{
-				for(int k = j+1 ; k < n-1 ;++k)
-				{
-					for(int l = k+1 ; i < n ;++l)
-					{
-						if(A[i]+A[j]+A[k]+A[l]==targetSum)
-						{
-							printf("%d %d %d %d \n",i,j,k,l) ;
+	void FourSum(int A[], int n, int targetSum) {
+
+		for (int i = 0; i < n - 3; ++i) {
+			for (int j = i + 1; j < n - 2; ++j) {
+				for (int k = j + 1; k < n - 1; ++k) {
+					for (int l = k + 1; i < n; ++l) {
+						if (A[i] + A[j] + A[k] + A[l] == targetSum) {
+							printf("%d %d %d %d \n", i, j, k, l);
 						}
 					}
 				}
@@ -95,35 +87,27 @@ class Solution
 
 // o(n^3) solution
 
+class Solution1 {
 
-class Solution1
-{
+public:
 
- public :
+	void FourSum(int A[], int n, int targetSum) {
+		sort(A, A + n);
 
-	void FourSum(int A[] , int n , int targetSum)
-	{
-		sort(A,A+n) ;
-
-		for(int i = 0 ; i < n-3 ; ++i)
-		{
-			for(int j = i+1 ; j <n-2 ; ++j)
-			{
-				int l = j+1 ;
-				int r = n-1 ;
-				while(l<r)
-				{
-					int t = (A[i]+A[j]+A[l]+A[r]) ;
-					if(targetSum == t)
-					{
-						printf("%d %d %d %d \n",i,j,l,r) ;
-						l++ ;
-						r-- ;
-					}
-					else if(t < targetSum )
-						l++ ;
+		for (int i = 0; i < n - 3; ++i) {
+			for (int j = i + 1; j < n - 2; ++j) {
+				int l = j + 1;
+				int r = n - 1;
+				while (l < r) {
+					int t = (A[i] + A[j] + A[l] + A[r]);
+					if (targetSum == t) {
+						printf("%d %d %d %d \n", i, j, l, r);
+						l++;
+						r--;
+					} else if (t < targetSum)
+						l++;
 					else
-						r-- ;
+						r--;
 				}
 			}
 		}
@@ -133,74 +117,82 @@ class Solution1
 
 // O(n^2logn) method
 
-class Solution2
-{
-public :
+struct Pair {
+	int f;
+	int s;
+	int sum;
+	int operator<(const Pair &other) const {
 
-	struct Pair
-	{
-		int f ;
-		int s ;
-		int sum ;
-		int operator<(const Pair &other)
-		{
-			return sum<other.sum ;
-		}
-	};
-	bool isSafePair(Pair &p1,Pair &p2)
-	{
-		if(p1.f==p2.f || p1.f==p2.s || p1.s==p2.f || p1.s==p2.s) return false ;
-		return true ;
+		return sum <= other.sum;
 	}
-	void FindFourSum(int A[] , int n , int targetSum)
-	{
-		int size = n * (n-1)/2 ;
-		Pair B[size] ;
-		int count = 0 ;
-		for(int i = 0 ; i<n-1 ;++i)
-		{
-			for(int j = i+1 ; j<n ;++j)
-			{
-				B[count].f = i ;
-				B[count].s = j ;
-				B[count].sum = A[i]+A[j] ;
-				count++ ;
+};
+
+class Solution2 {
+public:
+	vector<vector<int> > result;
+	void FourSum(int A[], int n, int targetSum) {
+		sort(A, A + n);
+	vector<int> solSet(4);
+
+		for (int i = 0; i < n - 3; ++i) {
+			 if(i > 0 && A[i-1]==A[i]) continue ;
+			for (int j = i + 1; j < n - 2; ++j) {
+				 if(j > i+1 && A[j-1]==A[j]) continue ;
+				int l = j + 1;
+				int r = n - 1;
+				while (l < r) {
+					int t = (A[i] + A[j] + A[l] + A[r]);
+					if(l > j+1 && A[l-1]==A[l]) {
+						l++ ; continue ;
+					}
+					if(r < n-1 && A[r]==A[r+1]) {
+						r-- ;
+						continue ;
+					}
+					if (targetSum == t) {
+						//printf("%d %d %d %d \n", i, j, l, r);
+						solSet[0] = A[i];
+						solSet[1] = A[j];
+						solSet[2] = A[l];
+						solSet[3] = A[r];
+						sort(solSet.begin(),solSet.end());
+						result.push_back(solSet);
+						l++;
+						r--;
+					} else if (t < targetSum)
+						l++;
+					else
+						r--;
+				}
 			}
 		}
+	}
 
-		sort(B,B+size);
-		int l = 0 ;
-		int r = size-1 ;
-		while(l<size && r>=0)
-		{
-			if(B[l].sum+B[r].sum==targetSum && isSafePair(B[l],B[r]))
-			{
-               printf("%d %d %d %d \n",B[l].f,B[l].s,B[r].f,B[r].s);
-				l++ ;
-				r-- ;
-			}
-			else if(B[l].sum+B[r].sum<targetSum)
-			{
-				l++ ;
-			}
-			else
-				r-- ;
-
-		}
+	vector<vector<int> > fourSum(vector<int> &num, int target) {
+		result.clear();
+		FourSum(&num[0], num.size(), target);
+		return result;
 	}
 
 };
-void driver()
-{
-  fstream fin("input.txt");	
-  Solution solver ;
+void driver() {
+	fstream fin("input.txt");
+	vector<int> input;
+	input.push_back(2);
+	input.push_back(1);
+	input.push_back(0);
+	input.push_back(-1);
+	int target = 2;
+
+	Solution2 solver;
+	cout << solver.fourSum(input, target);
 }
 /*
  input.txt 
 
-*/
-int main(){
+ */
+int main() {
 	driver();
-	cout<<"\n";
+	cout << "\n";
 	return 0;
 }

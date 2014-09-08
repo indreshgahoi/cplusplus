@@ -77,13 +77,13 @@ struct Array LIS(int *array , size_t size){
     FOR(i, 1, size){
         j = upper_bound(M,array, L, array[i]);
    
-    #ifdef DEBUG
+#ifdef DEBUG
         printf("j: %d \n Data array : ", j);
         FOR(k, 0, L){
             printf(" k:%d %d",k,array[M[k]]);
         }
         printf("\n");
-    #endif
+#endif
         P[i]=M[j-1];
         if(j==L){
             M[j]=i;
@@ -115,7 +115,8 @@ void solve(){
     
 }
 
-int main(){
+int main()
+{
     solve();
     return 0;
 }

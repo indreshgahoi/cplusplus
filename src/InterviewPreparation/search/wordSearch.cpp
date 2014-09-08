@@ -12,7 +12,8 @@ int row,col,len;
 string *s;
 vector<vector<bool> > visit;
 vector<vector<char> > *br;
-bool solve(int i,int j,int idx){
+bool solve(int i,int j,int idx)
+{
 	vector<vector<char> > &b=*(br);
 	if(i<0 || j<0 || i>=row || j>=col || idx>=len) return false;
 	if(visit[i][j]) return false;
@@ -23,7 +24,8 @@ bool solve(int i,int j,int idx){
 	visit[i][j]=false;
 	return flag;
 }
-bool exist(vector<vector<char> > &board, string word) {
+bool exist(vector<vector<char> > &board, string word)
+{
     s=&word;
     len=s->size();
 	row=board.size();

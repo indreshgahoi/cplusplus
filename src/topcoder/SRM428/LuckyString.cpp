@@ -39,7 +39,8 @@ bool myNextPermutedString(string &s){
 	return true;
 }
 
-int count(string s){
+int count(string s)
+{
 	len=s.length();
 	sort(s.begin(),s.end());
 	int count=0;

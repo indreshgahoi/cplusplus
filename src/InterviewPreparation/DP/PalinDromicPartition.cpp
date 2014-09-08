@@ -83,7 +83,9 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
  *  what DP[i] means minimum palindromic cut for string S[i.....S.length]
  *
  *  P[i][j] = true if string S[i.....j] is Palindromic other wise false
- *  So DP[i] ={ 0 , S[i]==S[S.length] && P[i+1][S.length-1]
+ *  So DP[i] =
+ *  {
+ *   0 , S[i]==S[S.length] && P[i+1][S.length-1]
  *				Min(DP[k]+S[i...k])  if(P[i][k]==true)
  *				                         DP[i] = D[k] + 0
  *				                     else

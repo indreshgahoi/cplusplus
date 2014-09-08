@@ -32,69 +32,64 @@ using namespace std;
 #define nl cout<<"\n";
 #define tab cout<<"		";
 void driver();
-void printArray(int A[],size_t size){
+void printArray(int A[], size_t size) {
 	printf("values= [");
-   for(int i=0;i<size-1;i++)
-	   printf("%d ,",A[i]);
-   printf("%d]\n",A[size-1]);
+	for (int i = 0; i < size - 1; i++)
+		printf("%d ,", A[i]);
+	printf("%d]\n", A[size - 1]);
 }
 template<class T>
-ostream& operator<<(ostream &out,const vector<T>& V){
-	out<<"[";
-	for(typename vector<T>::const_iterator it=V.begin();it!=V.end();it++){
-	 out<<" "<<*it;
+ostream& operator<<(ostream &out, const vector<T>& V) {
+	out << "[";
+	for (typename vector<T>::const_iterator it = V.begin(); it != V.end();
+			it++) {
+		out << " " << *it;
 	}
-	out<<"]"<<endl;
+	out << "]" << endl;
 	return out;
 }
-void getInput(vector<int> &v)
-{
+void getInput(vector<int> &v) {
 #define ARRAYSIZE(A) sizeof(A)/sizeof(A[0])
-	int arr[] = {-1,-1,-1,1,1};
-	int size = ARRAYSIZE(arr) ;
-	for(int iter = 0 ; iter < size ; ++iter)
-	{
+	int arr[] = { -1, -1, -1, 1, 1 };
+	int size = ARRAYSIZE(arr);
+	for (int iter = 0; iter < size; ++iter) {
 		v.push_back(arr[iter]);
 	}
 }
 /*
-Link :-  
-Question :-
-  
-  
-*/
-class Solution
-{
-	public :
-   
-	int minJump(int A[] , int n)
-	{
-		int steps = 0 ;
+ Link :-
+ Question :-
 
-		for( int iter = 1 ,max=A[0],next = 0 ; i < n ; i++ )
-		{
-			if(i > next)
-			{
-				if(max<i) return -1 ;
-				next = max ;
-				steps++ ;
+
+ */
+class Solution {
+public:
+
+	int jump(int A[], int n) {
+		int steps = 0;
+
+		for (int i = 1, maX = A[0], next = 0; i < n; i++) {
+			if (i > next) {
+				if (maX < i)
+					return -1;
+				next = maX;
+				steps++;
 			}
-			max = max(max,i+A[i]) ;
+			maX = max(maX, i + A[i]);
 		}
-		return steps ;
+		return steps;
 	}
 };
-void driver()
-{
-  fstream fin("input.txt");	
-  Solution solver ;
+void driver() {
+	fstream fin("input.txt");
+	Solution solver;
 }
 /*
  input.txt 
 
-*/
-int main(){
+ */
+int main() {
 	driver();
-	cout<<"\n";
+	cout << "\n";
 	return 0;
 }

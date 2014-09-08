@@ -76,8 +76,7 @@ public:
                k-- ;
            }
 
-           while(j>=0)
-           {
+           while(j>=0) {
                A[k]=B[j--] ;
                k-- ;
            }

@@ -62,9 +62,56 @@ Question :-
   
 */
 
+class Solution
+{
+
+   bool isValidSubSqure(vector<vector<int> > &mat ,int x , int y , int size)
+   {
+
+    for(int j = y ; j < y+size;++j)
+    {
+    	if(mat[x][j]==0) return false ;
+    	if(mat[x+size-1][j]==0) return false ;
+    }
+    for(int j = x ; j<x+size;++j)
+    {
+    	if(mat[j][y]==0) return false ;
+    	if(mat[j][y+size-1]==0) return false ;
+    }
+
+    return true ;
+   }
+
+
+   int maxSizeSubSqure(vector<vector<int> > &mat,int &x,int &y)
+   {
+	   int maxSize = 0;
+	   int len = mat.size();
+	   for(int col = 0 ; len-col>maxSize;++col)
+	   {
+		   for(int row=0;len-row>maxSize;++row)
+		   {
+                for(int size =len-max(row,col);size>maxSize;size--)
+                {
+                	if(isValidSubSqure(mat,row,col,size))
+                	{
+                		x= row ;
+                		y = col ;
+                		maxSize = size ;
+                	}
+                }
+		   }
+	   }
+	   return maxSize;
+   }
+};
+
+
+
+
 void driver()
 {
- 
+
 }
 /*
  input.txt 
