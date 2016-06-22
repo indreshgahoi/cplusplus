@@ -165,13 +165,12 @@ void VerticleSumUtilV3(TreeNode *root ,DLLNode *preSumNode)
 		VerticleSumUtilV3(root->right,preSumNode->right);
 	}
 
-
-
 }
 struct node
 {
 	TreeNode *tptr ;
 	int level ;
+
 };
 
 void VerticleSumUsingLevelOrderTraversal(TreeNode *root)

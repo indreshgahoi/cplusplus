@@ -14,7 +14,13 @@
 using namespace std ;
 
 
-/* Definition of prefix function
+/*
+
+
+
+
+
+ * Definition of prefix function
  * Given a pattern of characters P[1....q] match T[s+1 ....s+q]
  * What is leat shift s' > s such that k < q
  *
@@ -25,8 +31,13 @@ using namespace std ;
  *   s'+ k = s + q
  *    s' = s + (q-k)
  *  Pf:{1,2,....m}-> {0,1....m-1}
- *
+
  * pf(q) = max{k : k< q and Pk suffix of Pq }
+ *
+ *
+ *
+ *
+ *
  */
 
 

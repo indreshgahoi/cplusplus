@@ -12,6 +12,7 @@
 #include<fstream>
 #include<vector>
 #include<algorithm>
+#include<ostream>
 #include<cstdio>
 #include<climits>
 #include<string>

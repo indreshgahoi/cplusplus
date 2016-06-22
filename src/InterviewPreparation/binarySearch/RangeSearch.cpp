@@ -87,7 +87,7 @@ void test_lower_bound(){
 
 	 }
 	 if(A[s]==target)
-		 l=e;
+		 l = e ;
 	 s=0,e=n-1;
 	 while(s<e){
 		 m=(s+e+1)>>1;

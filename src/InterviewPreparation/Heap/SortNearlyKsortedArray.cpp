@@ -188,8 +188,7 @@ void printArray(int arr[], int size)
 }
 
 // Driver program to test above functions
-int main()
-{
+int main() {
     int k = 3;
     int arr[] = {2, 6, 3, 12, 56, 8};
     int n = sizeof(arr)/sizeof(arr[0]);

@@ -14,7 +14,6 @@ void all_prime(int l, int r) {
 	primcount = 0;
 	x =  sqrt(r) + 1;
 	memset(a, 1, (x < sizeof(a)) ? x : sizeof(a));
-
 	memset(isprim, 1, sizeof(isprim));
 
 	a[0] = a[1] = 0;

@@ -1,110 +1,117 @@
 /*
- * RangeSearch.cpp
+ * rangeSearch.cpp
+ * run command
+ * g++ /media/program/cprogram/git_repo/Algorithm/src/InterviewPreparation/binarySearch/rangeSearch.cpp -o /usr/build/Main.o
  *
- *  Created on: Apr 11, 2013
- *      Author: root
+ *  Created on: Dec 30, 2013
+ *      Author: Indresh Gahoi
  */
 
-#include "constant.h"
-//
-//  lower.c
-//  practice_problem
-//
-//  Created by Indresh on 9/26/13.
-//
-//
+#include<iostream>
+#include<sstream>
+#include<fstream>
+#include<cstdio>
+#include<climits>
+#include<pthread.h>
+#include<sys/types.h>
+#include<unistd.h>
+#include<algorithm>
+#include<string>
+#include<cstring>
+#include<set>
+#include<vector>
+#include<map>
+#include<stack>
+#include<queue>
 
-#include <stdio.h>
+using namespace std;
+
+#define FOR(_i,a,b) for(int _i=a;_i<b;_i++)
+#define REP(_i,n)    for(int _i=0;_i<n;_i++)
+#define debug(x) cout<<#x" "<<x;
+#define nl cout<<"\n";
+#define tab cout<<"		";
+void driver();
+
+void printArray(int A[],size_t size){
+	printf("values= [");
+   for(int i=0;i<size-1;i++)
+	   printf("%d ,",A[i]);
+   printf("%d]\n",A[size-1]);
+}
+
+template<class T>
+ostream& operator<<(ostream &out,const vector<T>& V){
+	out<<"[";
+	for(typename vector<T>::const_iterator it=V.begin();it!=V.end();it++){
+	 out<<" "<<*it;
+	}
+	out<<"]"<<endl;
+	return out;
+}
+void getInput(vector<int> &v)
+{
+#define ARRAYSIZE(A) sizeof(A)/sizeof(A[0])
+	int arr[] = {-1,-1,-1,1,1};
+	int size = ARRAYSIZE(arr) ;
+	for(int iter = 0 ; iter < size ; ++iter)
+	{
+		v.push_back(arr[iter]);
+	}
+}
+/*
+Link :-  
+Question :-
 
 
-#define __advanse(ptr,size,step)    (ptr=(char*)ptr+(size*step))
+ 0 1 2 3 4 5 6 7 8
+ 1 2 3 4 4 4 7 8 9   m = (0+9) / 2 = 4
 
-void* lower_bound(void *first ,size_t len, size_t elem_size, void *value, int (*cmp) (const void *,const void *)){
-   
-    size_t len1;
-    void *m ;
-    while(len!=0){
-            len1=len>>1;
-            m=first;
-            __advanse(m,elem_size,len1);
-            if(cmp(m,value)){
-                m=(char*)m+elem_size;
-                first=m;
-                len-=len1+1;
+ 0 1 2 3 4    l = 0  r 4
+ 1 2 3 4 4       m = (0+4) / 2  = 2
+       3 4      l= 3 r = 4
+       4 4          4+3/2  3
+*/
+class Solution {
+public:
+    vector<int> searchRange(int A[], int n, int target) {
+
+        int l , r ;
+        int m ;
+        vector<int> res ;
+        l = 0 ;
+        r = n-1 ;
+
+        while( l < r)
+        {
+            m = l + (r-l)/2 ;
+
+            if(A[m] < target)
+            {
+                r = m+1 ;
             }
             else
-                len = len1;
-    }
-    return first;
-}
-
-void* upper_bound(void *first, size_t len ,size_t elem_size , void *value ,int (*cmp) (const void * , const void *)){
-   
-    size_t len1 ;
-    void *m ;
-    
-    while(len!=0){
-        len1=len>>1;
-         m=first;
-        __advanse(m, elem_size, len1);
-        if(cmp(value,m)){
-            len=len1;
+            {
+                l = m ;
+            }
         }
-        else{
-            first=m=(char*)m+elem_size;
-            len-=len1+1;
-        }
-        
+        res.push_back(l);
+
+        return res ;
     }
-    return first;
+};
+void driver()
+{
+  fstream fin("input.txt");	
+
+  Solution solver ;
 }
+/*
+ input.txt 
 
-int compare(const void *a , const void *b){
-    return *((int *)a)<*((int *)b);
+*/
+int main(){
+	driver();
+	cout<<"\n";
+	return 0;
 }
-
-#define ARRAY_SIZE(A) (sizeof(A)/sizeof(A[0]))
-
-void test_lower_bound(){
-    int a[]={1,1,2,2,3,3,4,4,5,5,5,5,6,7,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,11,11,11,13,13,17};
-    int i = 13;
-   // int *b=(int *)lower_bound(a,ARRAY_SIZE(a),4,&i,&compare);
-    int *b=(int *)upper_bound(a,ARRAY_SIZE(a),4,&i,&compare);
-        printf("value :%d  \n",*(b));
-}
-
- vector<int> searchRange(int A[], int n, int target) {
-     vector<int> ans;
-     int l=-1,r=-1;
-	 int s=0,e=n-1;
-	 int m=0;
-	 while(s<e){
-		 m=(s+e)>>1;
-		 if(target>A[m])
-			 s=m+1;
-		 else
-			 e=m;
-
-	 }
-	 if(A[s]==target)
-		 l=e;
-	 s=0,e=n-1;
-	 while(s<e){
-		 m=(s+e+1)>>1;
-		 if(target<A[m])
-			 e=m-1;
-		 else
-			 s=m;
-	 }
-
-	 if(A[s]==target)
-		 r=s;
-
-
-
-    ans.push_back(l);
-    ans.push_back(r);
-    return ans;
-    }
-
-

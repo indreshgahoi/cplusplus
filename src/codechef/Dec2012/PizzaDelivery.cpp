@@ -56,7 +56,7 @@ typedef pair< int,pair< int,int > > tri;
 int Min[300000];
 int memo[300000];
 int o[500],p[500];
-/int n;
+int n;
 void setmemo(int m){
 
 	int target=m<<1;
